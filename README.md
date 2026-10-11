@@ -2,11 +2,16 @@
 
 Single-page site (Vite + vanilla JS/CSS). `npm run dev` · `npm run build`.
 
-## Needs the owner's real assets (provisional right now)
-- **Brand tokens** (colours + Bricolage Grotesque; deliberately NOT the reference's): colours and fonts at the top of `src/styles.css` are PROVISIONAL — the official Instagram could not be inspected during the build. Replace with the real palette/lettering.
-- **Logo**: `public/assets/brand/logo-placeholder.svg` (and `favicon.svg`) are stand-ins.
-- **Photos**: every `.slot` element is a labelled placeholder. Replace with real photographs of the food (never stock imagery).
-- **Events**: no dates/prices are shown. Confirm the Eventbrite link is a live listing before relying on it.
+## Brand sources
+Identity taken from the Instagram posters/photos supplied by the owner (fuchsia `#ec008c`, lemon yellow `#fffb0b`, flag red `#d32051`, white condensed caps, dashed yellow boxes, flag bunting). Fonts are look-alikes (Bebas Neue + Barlow), not the brand's own.
+The reference Framer site was used only for layout/behaviour patterns, not its colours or type.
+Instagram/Facebook/Eventbrite could not be read directly (login/bot walls), so nothing was scraped.
 
-- Instagram, Facebook and Eventbrite were unreachable from the build environment (DNS blocked), so none of their content or visuals was inspected.
-- Still to confirm with the owner: real logo/palette/lettering, photos, whether the Eventbrite link is a live listing, any event dates/prices.
+## Assets in `public/assets/brand/`
+- `poster-*`, `art-*`, `photo-vauxhall-garden`, `banner-peruvian-grill`: crops of owner-supplied images (low resolution). `art-*` have the event dates cropped out so past events never look current. `poster-*` appear only under "Past experiences".
+- Replace with originals/high-res exports when available. Header wordmark is live text, not the real logo (`logo-banner-crop.webp` is a low-res crop of the banner, unused).
+
+## Still needed from the owner
+- Vector logo, original brand fonts, hi-res food photos (anticuchos, wings, potatoes, sauces).
+- Confirm the Eventbrite link is a live listing (it redirects to `eventbrite.co.uk/e/peruvian-tasting-experience-food-drink-tickets-318374094487`).
+- Permission to publish the WhatsApp booking number seen on a past poster, and whether extra menu items (costillas anticucheras, picarones, tres leches, marcianos, Inca Kola, etc.) should be listed.
