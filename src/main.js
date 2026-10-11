@@ -1,65 +1,63 @@
-import '@fontsource-variable/bricolage-grotesque';
-import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/inter-tight';
 import './styles.css';
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+$('#year').textContent = new Date().getFullYear();
 
-// Mobile menu
-const burger = document.getElementById('burger');
-const nav = document.getElementById('nav');
-const setMenu = (open) => {
+// Mobile drawer
+const burger = $('#burger');
+const drawer = $('#drawer');
+const setDrawer = (open) => {
   burger.setAttribute('aria-expanded', String(open));
   burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  document.body.classList.toggle('menu-open', open);
+  drawer.hidden = !open;
+  document.body.style.overflow = open ? 'hidden' : '';
 };
-burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
-nav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+burger.addEventListener('click', () => setDrawer(burger.getAttribute('aria-expanded') !== 'true'));
+drawer.addEventListener('click', (e) => { if (e.target.closest('a')) setDrawer(false); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setDrawer(false); });
 
-// Reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-if (reduce || !('IntersectionObserver' in window)) {
-  revealEls.forEach((el) => el.classList.add('in'));
-} else {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach((el, i) => { el.style.setProperty('--d', `${(i % 4) * 70}ms`); io.observe(el); });
-}
+// Menu: tabs, dots and slides share one index
+const tabs = $$('.card__tabs button');
+const dots = $$('.menu__dots button');
+const lists = $$('.items');
+const slides = $$('.slide');
+const select = (i) => {
+  tabs.forEach((el, k) => el.classList.toggle('is-active', k === i));
+  dots.forEach((el, k) => el.setAttribute('aria-selected', String(k === i)));
+  lists.forEach((el, k) => el.classList.toggle('is-active', k === i));
+  slides.forEach((el, k) => el.classList.toggle('is-active', k === i));
+};
+[...tabs, ...dots].forEach((el) => el.addEventListener('click', () => select(+el.dataset.i)));
 
-// Header state + parallax + sticky CTA
-const header = document.querySelector('.site-header');
-const sticky = document.getElementById('stickyCta');
-const events = document.getElementById('events');
-const parallax = [...document.querySelectorAll('[data-parallax]')];
+// Scroll-driven: nav slide-in, bottom bar, about floating images
+const nav = $('#nav');
+const bar = $('#bar');
+const about = $('.about');
+const floats = $$('.float').map((el, i) => ({ el, from: el.dataset.from.split(',').map(Number), s: +el.dataset.s, start: 0.04 + i * 0.1 }));
+const clamp = (v) => Math.min(1, Math.max(0, v));
+const ease = (t) => 1 - Math.pow(1 - t, 3);
 let ticking = false;
-const onScroll = () => {
+const update = () => {
   const y = window.scrollY;
-  header.classList.toggle('scrolled', y > 30);
-  const r = events.getBoundingClientRect();
-  const inEvents = r.top < window.innerHeight * 0.6 && r.bottom > 0;
-  sticky.classList.toggle('show', y > 500 && !inEvents);
-  if (!reduce) parallax.forEach((el) => { el.style.transform = `translate3d(0, ${Math.min(y, window.innerHeight) * parseFloat(el.dataset.parallax)}px, 0)`; });
+  const vh = window.innerHeight;
+  nav.classList.toggle('show', y > vh * 0.6);
+  bar.classList.toggle('show', y > vh * 0.8);
+  if (!reduce) {
+    const r = about.getBoundingClientRect();
+    const p = clamp(-r.top / (r.height - vh));
+    floats.forEach(({ el, from, s, start }) => {
+      const t = ease(clamp((p - start) / 0.18));
+      const out = ease(clamp((p - 0.86) / 0.14));
+      el.style.opacity = t * (1 - out);
+      el.style.transform = `translate(${from[0] * (1 - t)}%, ${from[1] * (1 - t)}%) scale(${s + (1 - s) * t})`;
+    });
+  }
   ticking = false;
 };
-window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-onScroll();
-
-// Active nav link
-const links = [...document.querySelectorAll('.nav__list a')];
-const secs = links.map((a) => document.querySelector(a.getAttribute('href')));
-if ('IntersectionObserver' in window) {
-  const so = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) {
-        links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${en.target.id}`));
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  secs.forEach((s) => s && so.observe(s));
-}
+window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+window.addEventListener('resize', update);
+update();
