@@ -1,4 +1,4 @@
-import '@fontsource-variable/inter-tight';
+import '@fontsource-variable/bricolage-grotesque';
 import './styles.css';
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

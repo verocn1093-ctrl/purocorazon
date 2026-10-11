@@ -20,16 +20,21 @@
       <span>Puro Corazón UK</span>
     </a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#about">about us</a>
-      <a href="#menu">menu</a>
-      <a href="#contact">contact</a>
+      <a href="#experience">experience</a>
+      <a href="#menu">food</a>
+      <a href="#sauces">sauces</a>
+      <a href="#book">events</a>
+      <a href="#story">story</a>
     </nav>
+    <a class="nav__cta" href="#book">Find an experience</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
   </header>
   <div class="drawer" id="drawer" hidden>
-    <a href="#about">about us</a>
-    <a href="#menu">menu</a>
-    <a href="#book">book</a>
+    <a href="#experience">experience</a>
+    <a href="#menu">food</a>
+    <a href="#sauces">sauces</a>
+    <a href="#book">events</a>
+    <a href="#story">story</a>
     <a href="#contact">contact</a>
   </div>
 
@@ -40,29 +45,30 @@
         <span class="ph__tag">Photo · anticuchos on the grill</span>
       </div>
       <div class="hero__col">
-        <h1 class="hero__title">
-          <span>anticuchos</span>
-          <span>wings</span>
-          <span>sauces</span>
+        <h1 class="hero__title" aria-label="Bring the flavours of Peru to London">
+          <span>bring the</span>
+          <span>flavours</span>
+          <span>of Peru</span>
+          <span>to London</span>
         </h1>
         <ul class="hero__links">
-          <li><b>01</b><a href="#about">about us</a></li>
-          <li><b>02</b><a href="#menu">menu</a></li>
-          <li><b>03</b><a href="#contact">contact</a></li>
+          <li><b>01</b><a href="#menu">anticuchos &amp; wings</a></li>
+          <li><b>02</b><a href="#sauces">chimichurri, huancaína, rocoto</a></li>
+          <li><b>03</b><a href="#book">book in advance</a></li>
         </ul>
         <div class="hero__foot">
-          <p>Peruvian culinary experiences<br />in London. Book in advance<br />via Instagram or Eventbrite.</p>
+          <p>Peruvian culinary experiences in London. Find us on Instagram or Eventbrite and book in advance.</p>
           <div class="hero__thumb ph ph--b" role="img" aria-label="Photo placeholder: Peruvian sauces"><span class="ph__tag">Photo · sauces</span></div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="about" id="about" aria-labelledby="about-label">
+    <section class="about" id="experience" aria-labelledby="about-label">
       <div class="about__pin">
         <div class="about__text">
-          <p class="label" id="about-label">about us</p>
-          <h2>Our mission is to share Peru's flavours in London. From beef heart anticuchos grilled over flame to the sauces on the table, we cook with puro corazón and invite you to eat together.</h2>
+          <p class="label" id="about-label">the experience</p>
+          <h2>Puro Corazón UK shares Peruvian food and culinary experiences in London. Beef heart anticuchos, grilled potatoes, wings and sauces, made with heart and meant to be shared.</h2>
         </div>
         <div class="float ph ph--a" data-from="-40,-30" data-s="0.5" style="--x:4%;--y:8%;--w:17%;--r:3/4"><span class="ph__tag">Photo · beef heart anticuchos</span></div>
         <div class="float ph ph--c" data-from="40,-30" data-s="0.5" style="--x:78%;--y:6%;--w:15%;--r:1/1"><span class="ph__tag">Photo · chicken anticuchos</span></div>
@@ -77,19 +83,17 @@
     <section class="menu" id="menu" aria-labelledby="menu-title">
       <div class="menu__bg ph ph--dark" aria-hidden="true"></div>
       <div class="menu__inner">
-        <h2 id="menu-title">Our menu</h2>
+        <h2 id="menu-title">Specialities</h2>
         <div class="menu__grid">
           <div class="menu__dots" role="tablist" aria-label="Menu sections">
             <button role="tab" aria-selected="true" aria-label="Anticuchos" data-i="0"></button>
             <button role="tab" aria-selected="false" aria-label="Wings and potatoes" data-i="1"></button>
-            <button role="tab" aria-selected="false" aria-label="Sauces" data-i="2"></button>
           </div>
 
           <div class="card">
             <div class="card__tabs" role="group" aria-label="Filter">
               <button class="is-active" data-i="0">Anticuchos</button>
               <button data-i="1">Wings &amp; potatoes</button>
-              <button data-i="2">Sauces</button>
             </div>
             <div class="card__body">
               <ul class="items is-active" data-i="0">
@@ -100,27 +104,32 @@
                 <li><h3>Anticucho Wings</h3><p>Chicken wings with the flavours of Peruvian anticuchos.</p></li>
                 <li><h3>Grilled potatoes</h3><p>Potatoes grilled and seasoned with anticucho flavour.</p></li>
               </ul>
-              <ul class="items" data-i="2">
-                <li><h3>Chimichurri</h3><p>Fresh, herby and bright.</p></li>
-                <li><h3>Huancaína</h3><p>The creamy Peruvian classic.</p></li>
-                <li><h3>Spicy rocoto</h3><p>For anyone who likes heat.</p></li>
-              </ul>
             </div>
-            <p class="card__note">Menus vary by experience. Check the event listing for what is served.</p>
+            <p class="card__note">What is served can vary by experience. Check the event listing before you book.</p>
           </div>
 
           <div class="slides" aria-hidden="true">
             <div class="slide ph ph--a is-active"><span class="ph__tag">Photo · anticuchos</span></div>
             <div class="slide ph ph--d"><span class="ph__tag">Photo · wings &amp; potatoes</span></div>
-            <div class="slide ph ph--e"><span class="ph__tag">Photo · sauces</span></div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- SAUCES -->
+    <section class="sauces" id="sauces" aria-labelledby="sauces-title">
+      <p class="label">on the side</p>
+      <h2 id="sauces-title">Three sauces,<br />one table.</h2>
+      <ul class="sauce-list">
+        <li class="sauce" tabindex="0"><span class="sauce__n">01</span><h3>Chimichurri</h3><p>Fresh and herby, to cut through the grill.</p><div class="sauce__ph ph ph--e" role="img" aria-label="Photo placeholder: chimichurri"><span class="ph__tag">Photo · chimichurri</span></div></li>
+        <li class="sauce" tabindex="0"><span class="sauce__n">02</span><h3>Huancaína</h3><p>The creamy Peruvian classic.</p><div class="sauce__ph ph ph--b" role="img" aria-label="Photo placeholder: huancaína"><span class="ph__tag">Photo · huancaína</span></div></li>
+        <li class="sauce" tabindex="0"><span class="sauce__n">03</span><h3>Spicy rocoto</h3><p>For anyone who likes heat.</p><div class="sauce__ph ph ph--c" role="img" aria-label="Photo placeholder: spicy rocoto"><span class="ph__tag">Photo · rocoto</span></div></li>
+      </ul>
+    </section>
+
     <!-- HOW IT WORKS (marquee, replaces reviews) -->
     <section class="steps" aria-labelledby="steps-title">
-      <h2 id="steps-title">How to join us</h2>
+      <h2 id="steps-title">How to join an experience</h2>
       <div class="marquee">
         <div class="marquee__track">
           <article><b>01</b><p>Follow @purocorazonuk on Instagram for the latest announcements.</p></article>
@@ -139,21 +148,28 @@
     <section class="book" id="book" aria-labelledby="book-title">
       <div class="book__left">
         <svg class="book__logo" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
-        <h2 id="book-title">Book an experience</h2>
-        <p>Reserve your place in advance and let us bring the flavours of Peru to your table. Upcoming experiences are announced on our official channels, so check there for the latest.</p>
-        <a class="btn" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Book on Eventbrite</a>
+        <h2 id="book-title">Events &amp; reservations</h2>
+        <p>Experiences are booked in advance. We do not list dates here: new announcements appear first on Instagram and Eventbrite, so check there for what is coming up.</p>
+        <a class="btn" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a>
       </div>
       <div class="book__right">
         <div>
-          <h3>Find us</h3>
+          <h3>Where to look</h3>
           <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram @purocorazonuk</a></p>
           <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
           <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
         </div>
-        <div>
-          <h3>Our story</h3>
-          <p>Launched on <time datetime="2021-07-06">6 July 2021</time>. Director: Joan Vallejos Bueno.</p>
-        </div>
+        
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story" aria-labelledby="story-title">
+      <p class="label">our story</p>
+      <h2 id="story-title">Since <time datetime="2021-07-06">6 July 2021</time>.</h2>
+      <div class="story__cols">
+        <p>Puro Corazón UK promotes Peruvian culinary experiences in London, with traditional beef heart anticuchos, chicken anticuchos, Anticucho Wings, grilled potatoes with anticucho flavour and three sauces.</p>
+        <p>Led by director Joan Vallejos Bueno. <a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">See the latest on Instagram</a>.</p>
       </div>
     </section>
   </main>
@@ -161,9 +177,9 @@
   <footer class="footer" id="contact">
     <div class="footer__top">
       <nav aria-label="Footer">
-        <a href="#about">about us</a>
-        <a href="#menu">menu</a>
-        <a href="#book">book</a>
+        <a href="#experience">experience</a>
+        <a href="#menu">food</a>
+        <a href="#book">events</a>
       </nav>
       <div>
         <h3>Contact</h3>
