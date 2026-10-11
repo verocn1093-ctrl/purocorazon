@@ -4,7 +4,7 @@ Single-page site (Vite + vanilla JS/CSS). `npm run dev` · `npm run build`.
 
 ## Brand sources
 Identity taken from the Instagram posters/photos supplied by the owner (fuchsia `#ec008c`, lemon yellow `#fffb0b`, flag red `#d32051`, white condensed caps, dashed yellow boxes, flag bunting). Fonts are look-alikes (Bebas Neue + Barlow), not the brand's own.
-The reference Framer site was used only for layout/behaviour patterns, not its colours or type.
+Layout and behaviour follow the supplied Framer reference section by section (measured from its DOM): 40/60 hero with loading curtain and right-aligned headline, hide/show nav with hamburger, pinned text + scroll-triggered floating images, 3-column menu (round ↑↓ buttons · card · category list; tabs on mobile), draggable card carousel (reviews → past experiences), centred booking column + round button + tall image, huge footer links, and a bottom CTA card on mobile. Its colours/type are not used.
 Instagram/Facebook/Eventbrite could not be read directly (login/bot walls), so nothing was scraped.
 
 ## Assets in `public/assets/brand/`

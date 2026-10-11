@@ -15,39 +15,34 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION: hidden at the top, slides in after the hero. Hamburger on every screen size. -->
   <header class="nav" id="nav">
-    <a class="logo" href="#top" aria-label="Puro Corazón UK — home">
-      <svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
-      <span>Puro Corazón <small>UK</small></span>
-    </a>
-    <nav class="nav__links" aria-label="Main">
-      <a href="#experience">experience</a>
-      <a href="#menu">food</a>
-      <a href="#sauces">sauces</a>
-      <a href="#book">events</a>
-      <a href="#story">story</a>
-    </nav>
-    <a class="nav__cta" href="#book">Find an experience</a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
+    <div class="nav__spacer"></div>
+    <div class="nav__main">
+      <a class="logo" href="#top" aria-label="Puro Corazón UK — home">
+        <svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
+        <span>Puro Corazón <small>UK</small></span>
+      </a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
+    </div>
   </header>
   <div class="drawer" id="drawer" hidden>
     <a href="#experience">experience</a>
     <a href="#menu">food</a>
-    <a href="#sauces">sauces</a>
-    <a href="#book">events</a>
+    <a href="#past">past events</a>
     <a href="#story">story</a>
+    <a href="#book">book</a>
     <a href="#contact">contact</a>
   </div>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO: 40/60 split, full-bleed image with loading curtain -->
     <section class="hero" id="top">
       <div class="hero__img">
         <img src="/assets/brand/art-anticuchos-stand.webp" width="535" height="425" alt="Illustration of an anticuchos stand with a grill, a picarones stall and people sharing drinks" fetchpriority="high" />
+        <div class="hero__curtain" aria-hidden="true"></div>
       </div>
       <div class="hero__col">
-        <p class="tag"><span>Peruvian Grill · London</span></p>
         <h1 class="hero__title" aria-label="Bring the flavours of Peru to London">
           <span>bring the</span>
           <span>flavours</span>
@@ -55,120 +50,108 @@
           <span>to London</span>
         </h1>
         <ul class="hero__links">
-          <li><b>01</b><a href="#menu">anticuchos &amp; wings</a></li>
-          <li><b>02</b><a href="#sauces">chimichurri, huancaína, rocoto</a></li>
+          <li><b>01</b><a href="#menu" data-cat="0">anticuchos &amp; wings</a></li>
+          <li><b>02</b><a href="#menu" data-cat="2">sauces</a></li>
           <li><b>03</b><a href="#book">book in advance</a></li>
         </ul>
         <div class="hero__foot">
-          <p>Peruvian culinary experiences in London. Find us on Instagram or Eventbrite and book in advance.</p>
+          <p class="tag"><span>Peruvian Grill · London</span></p>
+          <p class="hero__note">Peruvian culinary experiences in London. Find us on Instagram or Eventbrite and book in advance.</p>
           <div class="hero__thumb"><img src="/assets/brand/photo-vauxhall-garden.webp" width="490" height="663" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE: pinned text, scroll-driven floating images -->
+    <!-- EXPERIENCE: pinned text, scroll-triggered floating images -->
     <section class="about" id="experience" aria-labelledby="about-label">
       <div class="about__pin">
         <div class="about__text">
           <p class="label" id="about-label">the experience</p>
           <h2>Puro Corazón UK shares Peruvian food and culinary experiences in London. Beef heart anticuchos, grilled potatoes, wings and sauces, made with heart and meant to be shared.</h2>
         </div>
-        <div class="float" data-from="-40,-30" data-s="0.5" style="--x:3%;--y:8%;--w:17%;--r:3/4"><img src="/assets/brand/art-cajon.webp" alt="Poster: man playing a cajón in front of colonial Lima buildings" loading="lazy" /></div>
-        <div class="float" data-from="40,-30" data-s="0.5" style="--x:79%;--y:6%;--w:16%;--r:3/4"><img src="/assets/brand/photo-vauxhall-garden.webp" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
-        <div class="float" data-from="-40,30" data-s="0.5" style="--x:6%;--y:60%;--w:17%;--r:3/4"><img src="/assets/brand/art-bbq-grill.webp" alt="Poster: Peruvian Social BBQ with skewers on a yellow grill and Inca Kola and Pilsen bottles" loading="lazy" /></div>
-        <div class="float" data-from="40,40" data-s="0.5" style="--x:74%;--y:58%;--w:19%;--r:3/4"><img src="/assets/brand/art-sabor-peru.webp" alt="Poster: Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" /></div>
-        <div class="float" data-from="0,-50" data-s="0.5" style="--x:40%;--y:-3%;--w:13%;--r:3/4"><img src="/assets/brand/poster-criolla-title.webp" alt="Poster: Día de la Canción Criolla at Vauxhall Food and Beer Garden" loading="lazy" /></div>
+        <div class="float" data-from="-40,-30" data-s="0.5" style="--x:3%;--y:8%;--w:17%;--r:4/5"><img src="/assets/brand/art-cajon.webp" alt="Poster: man playing a cajón in front of colonial Lima buildings" loading="lazy" /></div>
+        <div class="float" data-from="40,-30" data-s="0.5" style="--x:79%;--y:6%;--w:16%;--r:4/5"><img src="/assets/brand/photo-vauxhall-garden.webp" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
+        <div class="float" data-from="-40,30" data-s="0.5" style="--x:6%;--y:60%;--w:17%;--r:4/5"><img src="/assets/brand/art-bbq-grill.webp" alt="Poster: Peruvian Social BBQ with skewers on a yellow grill and Inca Kola and Pilsen bottles" loading="lazy" /></div>
+        <div class="float" data-from="40,40" data-s="0.5" style="--x:74%;--y:58%;--w:19%;--r:4/5"><img src="/assets/brand/art-sabor-peru.webp" alt="Poster: Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" /></div>
       </div>
     </section>
 
-    <!-- FOOD -->
+    <!-- MENU: [↑↓ buttons] [card] [category list] -->
     <section class="menu" id="menu" aria-labelledby="menu-title">
       <div class="menu__inner">
-        <h2 id="menu-title">Specialities</h2>
+        <h2 id="menu-title" class="menu__title">Our menu</h2>
+
+        <div class="menu__tabs" role="tablist" aria-label="Menu categories">
+          <button role="tab" class="is-active" aria-selected="true" data-i="0">Anticuchos</button>
+          <button role="tab" aria-selected="false" data-i="1">Wings &amp; potatoes</button>
+          <button role="tab" aria-selected="false" data-i="2">Sauces</button>
+        </div>
+
         <div class="menu__grid">
-          <div class="menu__dots" role="tablist" aria-label="Menu sections">
-            <button role="tab" aria-selected="true" aria-label="Anticuchos" data-i="0"></button>
-            <button role="tab" aria-selected="false" aria-label="Wings and potatoes" data-i="1"></button>
+          <div class="menu__btns">
+            <button class="round" id="prev" aria-label="Previous category"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+            <button class="round" id="next" aria-label="Next category"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
           </div>
 
-          <div class="card">
-            <div class="card__tabs" role="group" aria-label="Filter">
-              <button class="is-active" data-i="0">Anticuchos</button>
-              <button data-i="1">Wings &amp; potatoes</button>
-            </div>
-            <div class="card__body">
-              <ul class="items is-active" data-i="0">
-                <li><h3>Traditional beef heart anticuchos</h3><p>The classic Peruvian skewer, grilled and shared the traditional way.</p></li>
-                <li><h3>Chicken anticuchos</h3><p>Chicken skewers with the flavours of anticucho.</p></li>
+          <div class="card" aria-live="polite">
+            <div class="card__panel is-active" data-i="0">
+              <h3>Anticuchos</h3>
+              <ul class="items">
+                <li><div class="items__row"><h4>Traditional beef heart anticuchos</h4><span>Beef heart</span></div><p>The classic Peruvian skewer, grilled and shared the traditional way.</p></li>
+                <li><div class="items__row"><h4>Chicken anticuchos</h4><span>Chicken</span></div><p>Chicken skewers with the flavours of anticucho.</p></li>
               </ul>
-              <ul class="items" data-i="1">
-                <li><h3>Anticucho Wings</h3><p>Chicken wings with the flavours of Peruvian anticuchos.</p></li>
-                <li><h3>Grilled potatoes</h3><p>Potatoes grilled and seasoned with anticucho flavour.</p></li>
+            </div>
+            <div class="card__panel" data-i="1">
+              <h3>Wings &amp; potatoes</h3>
+              <ul class="items">
+                <li><div class="items__row"><h4>Anticucho Wings</h4><span>Chicken</span></div><p>Chicken wings with the flavours of Peruvian anticuchos.</p></li>
+                <li><div class="items__row"><h4>Grilled potatoes</h4><span>Anticucho flavour</span></div><p>Potatoes grilled and seasoned with anticucho flavour.</p></li>
+              </ul>
+            </div>
+            <div class="card__panel" data-i="2">
+              <h3>Sauces</h3>
+              <ul class="items">
+                <li><div class="items__row"><h4>Chimichurri</h4><span>Fresh</span></div><p>Fresh and herby, to cut through the grill.</p></li>
+                <li><div class="items__row"><h4>Huancaína</h4><span>Creamy</span></div><p>The creamy Peruvian classic.</p></li>
+                <li><div class="items__row"><h4>Spicy rocoto</h4><span>Hot</span></div><p>For anyone who likes heat.</p></li>
               </ul>
             </div>
             <p class="card__note">What is served can vary by experience. Check the event listing before you book.</p>
           </div>
 
-          <div class="slides">
-            <div class="slide is-active"><img src="/assets/brand/art-bbq-grill.webp" width="548" height="617" alt="Brand graphic: skewers over a yellow grill" loading="lazy" /></div>
-            <div class="slide"><img src="/assets/brand/banner-peruvian-grill.webp" width="424" height="734" alt="Photo of the Puro Corazón Peruvian Grill banner over a grill fire: the best traditional Peruvian grill in London" loading="lazy" /></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SAUCES -->
-    <section class="sauces" id="sauces" aria-labelledby="sauces-title">
-      <p class="label">on the side</p>
-      <h2 id="sauces-title">Three sauces,<br /><span>one table.</span></h2>
-      <ul class="sauce-list">
-        <li class="sauce" tabindex="0" style="--dot:#8bc34a"><span class="sauce__n">01</span><h3>Chimichurri</h3><p>Fresh and herby, to cut through the grill.</p><i class="sauce__dot" aria-hidden="true"></i></li>
-        <li class="sauce" tabindex="0" style="--dot:#ffd23f"><span class="sauce__n">02</span><h3>Huancaína</h3><p>The creamy Peruvian classic.</p><i class="sauce__dot" aria-hidden="true"></i></li>
-        <li class="sauce" tabindex="0" style="--dot:#d32051"><span class="sauce__n">03</span><h3>Spicy rocoto</h3><p>For anyone who likes heat.</p><i class="sauce__dot" aria-hidden="true"></i></li>
-      </ul>
-    </section>
-
-    <!-- HOW TO JOIN (marquee) -->
-    <section class="steps" aria-labelledby="steps-title">
-      <h2 id="steps-title">How to join an experience</h2>
-      <div class="marquee">
-        <div class="marquee__track">
-          <article><b>01</b><p>Follow @purocorazonuk on Instagram for the latest announcements.</p></article>
-          <article><b>02</b><p>Find the current experience on our Eventbrite listing.</p></article>
-          <article><b>03</b><p>Book in advance through the official channel.</p></article>
-          <article><b>04</b><p>Come hungry and share Peruvian food in London.</p></article>
-          <article><b>01</b><p>Follow @purocorazonuk on Instagram for the latest announcements.</p></article>
-          <article><b>02</b><p>Find the current experience on our Eventbrite listing.</p></article>
-          <article><b>03</b><p>Book in advance through the official channel.</p></article>
-          <article><b>04</b><p>Come hungry and share Peruvian food in London.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EVENTS & RESERVATIONS -->
-    <section class="book" id="book" aria-labelledby="book-title">
-      <div class="book__left">
-        <p class="tag tag--dark"><span>Book in advance</span></p>
-        <h2 id="book-title">Events &amp; reservations</h2>
-        <p>Experiences are booked in advance. We do not list dates here: new announcements appear first on Instagram and Eventbrite, so check there for what is coming up.</p>
-        <a class="btn" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a>
-      </div>
-      <div class="book__right">
-        <div>
-          <h3>Where to look</h3>
-          <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram @purocorazonuk</a></p>
-          <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
-          <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
-        </div>
-        <div>
-          <h3>Past experiences</h3>
-          <ul class="past">
-            <li><img src="/assets/brand/poster-sabor-peru.webp" width="492" height="664" alt="Poster for Sabor Perú" loading="lazy" /><span><b>Sabor Perú</b>The Garden Vauxhall</span></li>
-            <li><img src="/assets/brand/poster-criolla-title.webp" width="500" height="663" alt="Poster for Día de la Canción Criolla" loading="lazy" /><span><b>Día de la Canción Criolla</b>Vauxhall Food and Beer Garden</span></li>
-            <li><img src="/assets/brand/poster-bbq-title.webp" width="548" height="732" alt="Poster for Peruvian Social BBQ" loading="lazy" /><span><b>Peruvian Social BBQ</b>Elephant and Castle Station</span></li>
+          <ul class="cats" aria-label="Menu categories">
+            <li class="cat is-active" data-i="0"><span class="cat__img"><img src="/assets/brand/art-bbq-grill.webp" alt="" loading="lazy" /></span><span class="cat__label">Anticuchos</span></li>
+            <li class="cat" data-i="1"><span class="cat__img"><img src="/assets/brand/banner-peruvian-grill.webp" alt="" loading="lazy" /></span><span class="cat__label">Wings &amp; potatoes</span></li>
+            <li class="cat" data-i="2"><span class="cat__img cat__img--sauce" aria-hidden="true"><i></i><i></i><i></i></span><span class="cat__label">Sauces</span></li>
           </ul>
-          <p class="note">Shown for reference only. These have already taken place.</p>
         </div>
+
+        <div class="menu__captions"><span>What we cook</span><span>Peruvian Grill, London</span></div>
+      </div>
+    </section>
+
+    <!-- PAST EXPERIENCES: carousel with prev/next -->
+    <section class="past" id="past" aria-labelledby="past-title">
+      <div class="past__head">
+        <h2 id="past-title">Past experiences</h2>
+        <div class="past__btns">
+          <button class="round round--dark" id="cprev" aria-label="Previous experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+          <button class="round round--dark" id="cnext" aria-label="Next experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="past__track" id="ctrack" tabindex="0" role="region" aria-label="Past experiences, scroll horizontally">
+        <article class="pcard">
+          <img src="/assets/brand/poster-sabor-peru.webp" width="492" height="664" alt="Poster for Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" />
+          <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Sabor Perú</h3><p>The Garden Vauxhall</p></div>
+        </article>
+        <article class="pcard">
+          <img src="/assets/brand/poster-criolla-title.webp" width="500" height="663" alt="Poster for Día de la Canción Criolla at Vauxhall Food and Beer Garden" loading="lazy" />
+          <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Día de la Canción Criolla</h3><p>Vauxhall Food and Beer Garden</p></div>
+        </article>
+        <article class="pcard">
+          <img src="/assets/brand/poster-bbq-title.webp" width="548" height="732" alt="Poster for Peruvian Social BBQ at Elephant and Castle Station" loading="lazy" />
+          <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Peruvian Social BBQ</h3><p>Elephant and Castle Station</p></div>
+        </article>
       </div>
     </section>
 
@@ -179,42 +162,83 @@
         <h2 id="story-title">Since <time datetime="2021-07-06">6 July 2021</time>.</h2>
         <p class="story__lead">Puro Corazón UK promotes Peruvian culinary experiences in London, with traditional beef heart anticuchos, chicken anticuchos, Anticucho Wings, grilled potatoes with anticucho flavour and three sauces.</p>
         <blockquote>“Absolutely juicy, fresh ingredients, a lot of love and unique flavour.”<cite>Puro Corazón banner</cite></blockquote>
-        <p class="story__dir">Led by director Joan Vallejos Bueno. <a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">See the latest on Instagram</a>.</p>
+        <p class="story__dir">Led by director Joan Vallejos Bueno.</p>
       </div>
       <figure class="story__fig">
         <img src="/assets/brand/banner-peruvian-grill.webp" width="424" height="734" alt="Photo of the Puro Corazón Peruvian Grill banner: the best traditional Peruvian grill in London" loading="lazy" />
       </figure>
     </section>
+
+    <!-- BOOKING: centred text column + round button | tall image -->
+    <section class="book" id="book" aria-labelledby="book-title">
+      <div class="book__left">
+        <div class="book__intro">
+          <svg class="book__logo" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
+          <h2 id="book-title">Events &amp; reservations</h2>
+          <p>Experiences are booked in advance. We do not list dates here: new announcements appear first on Instagram and Eventbrite. Follow us, find the current experience and reserve your place.</p>
+        </div>
+        <div class="book__cols">
+          <div>
+            <h3>Where to look</h3>
+            <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram @purocorazonuk</a></p>
+            <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
+            <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
+            <p><a href="tel:+447478096764">+44 7478 096764</a></p>
+          </div>
+        </div>
+        <div class="book__btn"><a class="circle" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener"><span>Open our Eventbrite listing</span></a></div>
+      </div>
+      <div class="book__right">
+        <img src="/assets/brand/photo-vauxhall-garden.webp" width="490" height="663" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" />
+      </div>
+    </section>
   </main>
 
   <footer class="footer" id="contact">
-    <div class="bunting" aria-hidden="true"></div>
-    <div class="footer__top">
-      <nav aria-label="Footer">
+    <a class="logo logo--foot" href="#top" aria-label="Puro Corazón UK — back to top">
+      <svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
+      <span>Puro Corazón <small>UK</small></span>
+    </a>
+    <div class="footer__info">
+      <nav class="footer__nav" aria-label="Footer">
         <a href="#experience">experience</a>
         <a href="#menu">food</a>
-        <a href="#book">events</a>
+        <a href="#story">story</a>
+        <a href="#book">book</a>
+        <a href="#contact">contact</a>
       </nav>
-      <div>
-        <h3>Contact</h3>
-        <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
-        <p><a href="tel:+447478096764">+44 7478 096764</a></p>
-      </div>
-      <div>
-        <h3>Social</h3>
-        <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">@purocorazonuk</a></p>
-        <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
-        <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
+      <div class="footer__cols">
+        <div>
+          <h3>Contact</h3>
+          <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
+          <p><a href="tel:+447478096764">+44 7478 096764</a></p>
+        </div>
+        <div>
+          <h3>Find us</h3>
+          <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram</a></p>
+          <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
+          <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
+        </div>
       </div>
     </div>
-    <div class="footer__big" aria-hidden="true">Puro Corazón</div>
-    <p class="footer__legal">© <span id="year">2026</span> Puro Corazón UK. All rights reserved.</p>
+    <div class="footer__author">
+      <p><span>Director</span> Joan Vallejos Bueno</p>
+      <a class="ig" href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8"/></svg>@purocorazonuk</a>
+    </div>
+    <div class="footer__legal">
+      <p>© <span id="year">2026</span> Puro Corazón UK. All rights reserved.</p>
+      <div class="bunting" aria-hidden="true"></div>
+    </div>
   </footer>
 
-  <!-- Sticky bottom bar CTA -->
+  <!-- Sticky bottom bar CTA (small screens) -->
   <div class="bar" id="bar">
-    <a class="bar__book" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Book an experience</a>
-    <a class="bar__phone" href="tel:+447478096764">+44 7478 096764</a>
+    <a class="bar__book" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener"><span>Book an experience</span><small>+44 7478 096764</small></a>
+    <a class="bar__phone" href="tel:+447478096764" aria-label="Call Puro Corazón UK"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
   </div>
 </body>
 </html>
