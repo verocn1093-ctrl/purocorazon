@@ -17,14 +17,8 @@
 
   <!-- NAVIGATION: hidden at the top, slides in after the hero. Hamburger on every screen size. -->
   <header class="nav" id="nav">
-    <div class="nav__spacer"></div>
-    <div class="nav__main">
-      <a class="logo" href="#top" aria-label="Puro Corazón UK — home">
-        <svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
-        <span>Puro Corazón <small>UK</small></span>
-      </a>
-      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
-    </div>
+    <a class="logo" href="#top" aria-label="Puro Corazón UK — home"><img src="/assets/brand/wordmark-color.webp" width="798" height="125" alt="Puro Corazón" /></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
   </header>
   <div class="drawer" id="drawer" hidden>
     <a href="#experience">experience</a>
@@ -39,10 +33,11 @@
     <!-- HERO: 40/60 split, full-bleed image with loading curtain -->
     <section class="hero" id="top">
       <div class="hero__img">
-        <img src="/assets/brand/art-anticuchos-stand.webp" width="535" height="425" alt="Illustration of an anticuchos stand with a grill, a picarones stall and people sharing drinks" fetchpriority="high" />
+        <img src="/assets/brand/art-anticuchos-stand.webp" width="1605" height="1275" alt="Illustration of an anticuchos stand with a grill, a picarones stall and people sharing drinks" fetchpriority="high" />
         <div class="hero__curtain" aria-hidden="true"></div>
       </div>
       <div class="hero__col">
+        <a class="hero__logo" href="#top" aria-label="Puro Corazón UK — Peruvian Grill"><img src="/assets/brand/logo-white.webp" width="800" height="410" alt="Puro Corazón — Peruvian Grill" /></a>
         <h1 class="hero__title" aria-label="Bring the flavours of Peru to London">
           <span>bring the</span>
           <span>flavours</span>
@@ -56,7 +51,7 @@
         </ul>
         <div class="hero__foot">
           <p class="hero__note">Peruvian Grill, London<br />Book in advance via<br />Instagram or Eventbrite</p>
-          <div class="hero__thumb"><img src="/assets/brand/photo-vauxhall-garden.webp" width="490" height="663" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
+          <div class="hero__thumb"><img src="/assets/brand/photo-vauxhall-square.webp" width="980" height="980" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -65,18 +60,20 @@
     <section class="about" id="experience" aria-labelledby="about-label">
       <div class="about__pin">
         <div class="about__text">
-          <p class="label" id="about-label">the experience</p>
+          <p class="label" id="about-label">about us</p>
           <h2>Puro Corazón UK shares Peruvian food and culinary experiences in London. Beef heart anticuchos, grilled potatoes, wings and sauces, made with heart and meant to be shared.</h2>
         </div>
-        <div class="float" data-from="-40,-30" data-s="0.5" style="--x:3%;--y:8%;--w:17%;--r:4/5"><img src="/assets/brand/art-cajon.webp" alt="Poster: man playing a cajón in front of colonial Lima buildings" loading="lazy" /></div>
-        <div class="float" data-from="40,-30" data-s="0.5" style="--x:79%;--y:6%;--w:16%;--r:4/5"><img src="/assets/brand/photo-vauxhall-garden.webp" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
-        <div class="float" data-from="-40,30" data-s="0.5" style="--x:6%;--y:60%;--w:17%;--r:4/5"><img src="/assets/brand/art-bbq-grill.webp" alt="Poster: Peruvian Social BBQ with skewers on a yellow grill and Inca Kola and Pilsen bottles" loading="lazy" /></div>
-        <div class="float" data-from="40,40" data-s="0.5" style="--x:74%;--y:58%;--w:19%;--r:4/5"><img src="/assets/brand/art-sabor-peru.webp" alt="Poster: Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" /></div>
+        <div class="float" data-from="0,-70" data-s="0.6" style="--x:32%;--y:1.2%;--w:10.7%;--r:1/1"><img src="/assets/brand/photo-vauxhall-square.webp" width="980" height="980" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden" loading="lazy" /></div>
+        <div class="float" data-from="60,-20" data-s="0.6" style="--x:71.1%;--y:18.3%;--w:12.6%;--r:252/315"><img src="/assets/brand/art-cajon.webp" width="1000" height="1182" alt="Poster artwork: man playing a cajón in front of colonial Lima buildings" loading="lazy" /></div>
+        <div class="float" data-from="-60,20" data-s="0.6" style="--x:.65%;--y:46%;--w:13.8%;--r:276/343"><img src="/assets/brand/art-bbq-grill.webp" width="1096" height="1234" alt="Poster artwork: skewers over a yellow grill with Inca Kola and Pilsen bottles" loading="lazy" /></div>
+        <div class="float" data-from="0,70" data-s="0.6" style="--x:49%;--y:75%;--w:19.65%;--r:393/295"><img src="/assets/brand/art-anticuchos-stand.webp" width="1605" height="1275" alt="Illustration of an anticuchos stand with a grill, a picarones stall and people sharing drinks" loading="lazy" /></div>
       </div>
     </section>
 
     <!-- MENU: [↑↓ buttons] [card] [category list] -->
     <section class="menu" id="menu" aria-labelledby="menu-title">
+      <img class="deco deco--menu-a" src="/assets/brand/flowers-corner.webp" width="1108" height="616" alt="" aria-hidden="true" loading="lazy" />
+      <img class="deco deco--menu-b" src="/assets/brand/flowers-corner.webp" width="1108" height="616" alt="" aria-hidden="true" loading="lazy" />
       <div class="menu__inner">
         <h2 id="menu-title" class="menu__title">Our menu</h2>
 
@@ -140,15 +137,15 @@
       </div>
       <div class="past__track" id="ctrack" tabindex="0" role="region" aria-label="Past experiences, scroll horizontally">
         <article class="pcard">
-          <img src="/assets/brand/poster-sabor-peru.webp" width="492" height="664" alt="Poster for Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" />
+          <img src="/assets/brand/poster-sabor-peru.webp" width="984" height="1328" alt="Poster for Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" />
           <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Sabor Perú</h3><p>The Garden Vauxhall</p></div>
         </article>
         <article class="pcard">
-          <img src="/assets/brand/poster-criolla-title.webp" width="500" height="663" alt="Poster for Día de la Canción Criolla at Vauxhall Food and Beer Garden" loading="lazy" />
+          <img src="/assets/brand/poster-criolla-title.webp" width="1000" height="1326" alt="Poster for Día de la Canción Criolla at Vauxhall Food and Beer Garden" loading="lazy" />
           <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Día de la Canción Criolla</h3><p>Vauxhall Food and Beer Garden</p></div>
         </article>
         <article class="pcard">
-          <img src="/assets/brand/poster-bbq-title.webp" width="548" height="732" alt="Poster for Peruvian Social BBQ at Elephant and Castle Station" loading="lazy" />
+          <img src="/assets/brand/poster-bbq-title.webp" width="1096" height="1464" alt="Poster for Peruvian Social BBQ at Elephant and Castle Station" loading="lazy" />
           <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Peruvian Social BBQ</h3><p>Elephant and Castle Station</p></div>
         </article>
       </div>
@@ -164,7 +161,7 @@
         <p class="story__dir">Led by director Joan Vallejos Bueno.</p>
       </div>
       <figure class="story__fig">
-        <img src="/assets/brand/banner-peruvian-grill.webp" width="424" height="734" alt="Photo of the Puro Corazón Peruvian Grill banner: the best traditional Peruvian grill in London" loading="lazy" />
+        <img src="/assets/brand/banner-peruvian-grill.webp" width="848" height="1468" alt="Photo of the Puro Corazón Peruvian Grill banner: the best traditional Peruvian grill in London" loading="lazy" />
       </figure>
     </section>
 
@@ -172,7 +169,7 @@
     <section class="book" id="book" aria-labelledby="book-title">
       <div class="book__left">
         <div class="book__intro">
-          <svg class="book__logo" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
+          <img class="book__logo" src="/assets/brand/logo-color.webp" width="798" height="401" alt="Puro Corazón — Peruvian Grill" loading="lazy" />
           <h2 id="book-title">Events &amp; reservations</h2>
           <p>Experiences are booked in advance. We do not list dates here: new announcements appear first on Instagram and Eventbrite. Follow us, find the current experience and reserve your place.</p>
         </div>
@@ -192,16 +189,14 @@
         <div class="book__btn"><a class="circle" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener"><span>Open our Eventbrite listing</span></a></div>
       </div>
       <div class="book__right">
-        <img src="/assets/brand/photo-vauxhall-garden.webp" width="490" height="663" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" />
+        <img src="/assets/brand/photo-vauxhall-garden.webp" width="980" height="1326" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" />
       </div>
     </section>
   </main>
 
   <footer class="footer" id="contact">
-    <a class="logo logo--foot" href="#top" aria-label="Puro Corazón UK — back to top">
-      <svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg>
-      <span>Puro Corazón <small>UK</small></span>
-    </a>
+    <img class="deco deco--foot" src="/assets/brand/flowers-corner.webp" width="1108" height="616" alt="" aria-hidden="true" loading="lazy" />
+    <a class="footer__logo" href="#top" aria-label="Puro Corazón UK — back to top"><img src="/assets/brand/logo-white.webp" width="800" height="410" alt="Puro Corazón — Peruvian Grill" /></a>
     <div class="footer__info">
       <nav class="footer__nav" aria-label="Footer">
         <a href="#experience">experience</a>
@@ -230,7 +225,7 @@
     </div>
     <div class="footer__legal">
       <p>© <span id="year">2026</span> Puro Corazón UK. All rights reserved.</p>
-      <div class="footer__strip"><img src="/assets/brand/photo-vauxhall-garden.webp" width="490" height="663" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden" loading="lazy" /></div>
+      <div class="footer__strip"><img src="/assets/brand/photo-vauxhall-garden.webp" width="980" height="1326" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden" loading="lazy" /></div>
     </div>
   </footer>
 
