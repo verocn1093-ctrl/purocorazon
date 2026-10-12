@@ -51,22 +51,20 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .round--soft:disabled svg { stroke: var(--grey); }
 
 /* NAV: transparent bar (as in the reference), hidden at the top, slides in after the hero */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad); transform: translateY(-100%); transition: transform .5s var(--ease); pointer-events: none; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 80px; display: flex; align-items: center; justify-content: flex-end; padding: 0 var(--pad); transform: translateY(-100%); transition: transform .5s var(--ease); pointer-events: none; }
 .nav > * { pointer-events: auto; }
 .nav.show { transform: none; }
-.logo { display: block; }
-.logo img { height: 62px; width: auto; transition: transform .3s var(--ease); }
-.logo:hover img { transform: scale(1.05); }
 .burger { width: 54px; height: 54px; border-radius: 50%; background: var(--white); border: 1px solid var(--line); position: relative; flex: none; transition: background .25s; }
 .burger:hover { background: var(--soft); }
 .burger span { position: absolute; left: 16px; right: 16px; height: 1.5px; background: var(--ink); transition: transform .3s; }
 .burger span:first-child { top: 22px; } .burger span:last-child { top: 30px; }
 .burger[aria-expanded='true'] span:first-child { transform: translateY(4px) rotate(45deg); }
 .burger[aria-expanded='true'] span:last-child { transform: translateY(-4px) rotate(-45deg); }
-.drawer { position: fixed; inset: 0; z-index: 45; background: var(--white); display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 100px var(--pad) var(--pad); }
+.drawer { position: fixed; inset: 0; z-index: 45; background: var(--pink); color: var(--white); display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 100px var(--pad) var(--pad); }
 .drawer[hidden] { display: none; }
 .drawer a { font: clamp(3.4rem, 11vw, 7rem)/.95 var(--font-display); text-transform: uppercase; transition: color .2s, transform .3s var(--ease); width: max-content; }
-.drawer a:hover { color: var(--pink); transform: translateX(14px); }
+.drawer a:hover { color: var(--yellow); transform: translateX(14px); }
+.drawer__logo { position: absolute; top: 22px; left: var(--pad); height: 78px; width: auto; }
 
 /* HERO: positions follow the reference screenshot (headline and square photo at 50% of the right column, links at 25/50/75%) */
 .hero { display: grid; grid-template-columns: 40% 60%; height: 100svh; min-height: 680px; background: var(--white); color: var(--ink); position: relative; overflow: hidden; }
@@ -171,7 +169,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .book__cols p { font-size: 15px; line-height: 1.45; }
 .book__cols a { transition: color .2s; } .book__cols a:hover { color: var(--pink); }
 .circle { display: grid; place-items: center; width: 240px; height: 240px; border-radius: 50%; background: var(--pink); color: var(--white); text-align: center; padding: 2.2rem; font: 2rem/1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; transition: background .35s, transform .5s var(--ease); }
-.circle:hover { background: var(--white); color: var(--pink); transform: scale(1.05); }
+.circle:hover { background: var(--ink); color: var(--white); transform: scale(1.05); }
 .book__right { position: relative; overflow: hidden; min-height: 520px; }
 .book__right img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -185,7 +183,12 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .footer__info { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; }
 .footer__nav { display: flex; flex-direction: column; }
 .footer__nav a { font: clamp(1.7rem, 2.4vw, 2.3rem)/1.1 var(--font-display); text-transform: uppercase; width: max-content; transition: color .25s, transform .4s var(--ease); }
-.footer__nav a:hover { color: var(--pink); transform: translateX(18px); }
+.footer__nav a:nth-child(5n+1) { color: var(--pink); }
+.footer__nav a:nth-child(5n+2) { color: var(--yellow); }
+.footer__nav a:nth-child(5n+3) { color: #8bc34a; }
+.footer__nav a:nth-child(5n+4) { color: #00aeef; }
+.footer__nav a:nth-child(5n+5) { color: #ff6a3d; }
+.footer__nav a:hover { color: var(--white); transform: translateX(18px); }
 .footer__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-content: start; padding-top: .75rem; }
 .footer h3 { font: 400 14px var(--font); text-transform: lowercase; color: var(--grey); margin-bottom: .75rem; letter-spacing: 0; }
 .footer p { font-size: 15px; margin-bottom: .15rem; }
@@ -232,7 +235,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .hero__links { grid-column: 1 / -1; left: auto; grid-template-columns: repeat(3, auto); justify-content: space-between; column-gap: 1.25rem; padding-right: 0; } .hero__links li { font-size: 16px; }
   .hero__note { grid-column: 1; align-self: end; }
   .hero__thumb { grid-column: 2; width: 76px; }
-  .logo img { height: 48px; } .burger { width: 48px; height: 48px; } .burger span { left: 14px; right: 14px; } .burger span:first-child { top: 19px; } .burger span:last-child { top: 27px; }
+  .burger { width: 48px; height: 48px; } .burger span { left: 14px; right: 14px; } .burger span:first-child { top: 19px; } .burger span:last-child { top: 27px; }
   .nav { height: 64px; }
   .about { height: 356svh; }
   .float { left: var(--mx); top: var(--my); width: var(--mw); }
@@ -258,6 +261,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .bar__book { display: flex; flex-direction: column; line-height: 1.15; }
   .bar__book span { font: 1.7rem/1 var(--font-display); text-transform: uppercase; }
   .bar__book small { font-size: 14px; opacity: .8; }
+  .bar__phone { transition: background .25s; } .bar__phone:hover { background: var(--white); }
   .bar__phone { width: 48px; height: 48px; border-radius: 50%; background: var(--pink); display: grid; place-items: center; flex: none; }
   .bar__phone svg { width: 22px; height: 22px; fill: none; stroke: var(--white); stroke-width: 1.8; stroke-linejoin: round; }
   .footer { padding-bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
