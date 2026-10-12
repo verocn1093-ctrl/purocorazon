@@ -80,11 +80,11 @@ if (!reduce && 'IntersectionObserver' in window) {
   });
 }
 
-// Scroll-driven: nav slide-in, bottom bar, floating images in the pinned section
+// Scroll-driven: nav slide-in, bottom bar, six images rising from below in the pinned section
 const nav = $('#nav');
 const bar = $('#bar');
 const about = $('.about');
-const floats = $$('.float').map((el, i) => ({ el, from: el.dataset.from.split(',').map(Number), s: +el.dataset.s, start: 0.04 + i * 0.12 }));
+const floats = $$('.float').map((el) => ({ el, par: +el.dataset.par || 0 }));
 const clamp = (v) => Math.min(1, Math.max(0, v));
 const ease = (t) => 1 - Math.pow(1 - t, 3);
 let ticking = false;
@@ -94,13 +94,13 @@ const update = () => {
   nav.classList.toggle('show', y > vh * 0.6);
   bar.classList.toggle('show', y > vh * 0.8);
   if (!reduce) {
-    const r = about.getBoundingClientRect();
-    const p = clamp(-r.top / (r.height - vh));
-    floats.forEach(({ el, from, s, start }) => {
-      const t = ease(clamp((p - start) / 0.2));
-      const out = ease(clamp((p - 0.86) / 0.14));
-      el.style.opacity = t * (1 - out);
-      el.style.transform = `translate(${from[0] * (1 - t)}%, ${from[1] * (1 - t)}%) scale(${s + (1 - s) * t})`;
+    const top0 = about.getBoundingClientRect().top;
+    floats.forEach(({ el, par }) => {
+      const top = top0 + el.offsetTop; // position without the transform
+      const t = ease(clamp((vh - top) / (vh * 0.5))); // 0 as it enters at the bottom, 1 once it has risen
+      const shift = (top - vh / 2) * par; // gentle parallax so the six move at slightly different speeds
+      el.style.opacity = clamp(t * 2);
+      el.style.transform = `translateY(${shift}px) scale(${0.8 + 0.2 * t})`;
     });
   }
   ticking = false;

@@ -5,7 +5,7 @@
    carousel, centred booking column + round button + tall image, huge footer links,
    bottom CTA card on mobile).
    Colour and type: Puro Corazón. Fuchsia replaces the reference's accent; the
-   brand's condensed caps are used for display type. No decorative frames. */
+   brand's condensed caps are used for display type. No decorative frames; flowers only in corners. */
 :root {
   --pink: #ec008c;
   --pink-deep: #c4006f;
@@ -55,7 +55,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .nav > * { pointer-events: auto; }
 .nav.show { transform: none; }
 .logo { display: block; }
-.logo img { height: 34px; width: auto; transition: transform .3s var(--ease); }
+.logo img { height: 62px; width: auto; transition: transform .3s var(--ease); }
 .logo:hover img { transform: scale(1.05); }
 .burger { width: 54px; height: 54px; border-radius: 50%; background: var(--white); border: 1px solid var(--line); position: relative; flex: none; transition: background .25s; }
 .burger:hover { background: var(--soft); }
@@ -71,7 +71,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 /* HERO */
 .hero { display: grid; grid-template-columns: 40% 60%; min-height: 100svh; background: var(--pink); color: var(--white); position: relative; overflow: hidden; }
 .hero__img { position: relative; overflow: hidden; background: var(--pink-deep); min-height: 100svh; }
-.hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; animation: settle 1.8s var(--ease) both; }
+.hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: 34% 50%; animation: settle 1.8s var(--ease) both; }
 .hero__curtain { position: absolute; inset: 0; background: var(--pink); transform-origin: top; animation: curtain 1.1s .15s var(--ease) both; }
 .hero__col { display: flex; flex-direction: column; justify-content: space-between; padding: 96px var(--pad) var(--pad); gap: 1.5rem; min-width: 0; }
 .hero__title { font-size: clamp(3.6rem, 7.8vw, 9.5rem); line-height: .88; display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
@@ -93,20 +93,22 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 @keyframes settle { from { transform: scale(1.15); } to { transform: none; } }
 @keyframes drop { from { opacity: 0; transform: translateY(-28px); } to { opacity: 1; transform: none; } }
 
-/* EXPERIENCE: sticky text, floating images driven by scroll */
-.about { height: 380svh; position: relative; background: var(--white); }
-.about__pin { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; padding: 0 var(--pad); }
+/* EXPERIENCE: text pinned while six images rise from below (same pattern as the reference) */
+.about { height: 350svh; position: relative; background: var(--white); overflow: clip; }
+.about__pin { position: sticky; top: 0; height: 100svh; display: grid; place-items: center; padding: 0 var(--pad); }
 .about__text { max-width: 760px; text-align: center; position: relative; z-index: 2; }
 .about__text h2 { font: 400 clamp(1.4rem, 2.4vw, 1.9rem)/1.3 var(--font); text-transform: none; letter-spacing: -.01em; }
 .float { position: absolute; left: var(--x); top: var(--y); width: var(--w); aspect-ratio: var(--r); overflow: hidden; opacity: 0; will-change: transform, opacity; z-index: 3; }
 .float img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Flowers taken from the brand's ornament */
-.deco { position: absolute; pointer-events: none; user-select: none; z-index: 0; }
+/* Flowers: half of the brand ornament, flush into a corner */
+.corner { position: absolute; width: clamp(150px, 20vw, 300px); height: auto; pointer-events: none; user-select: none; z-index: 0; }
+.corner--tl { top: 0; left: 0; transform: scaleY(-1); }
+.corner--tr { top: 0; right: 0; transform: scaleY(-1); }
+.corner--bl { bottom: 0; left: 0; }
+.corner--br { bottom: 0; right: 0; }
 .menu { position: relative; overflow: hidden; }
 .menu__inner { position: relative; z-index: 1; }
-.deco--menu-a { top: 0; right: 0; width: clamp(180px, 22vw, 340px); }
-.deco--menu-b { bottom: 0; left: 0; width: clamp(180px, 22vw, 340px); transform: rotate(180deg); }
 
 /* MENU */
 .menu { padding: clamp(5rem, 9vw, 7.5rem) 0 clamp(3rem, 5vw, 4rem); background: var(--pink); color: var(--white); }
@@ -158,8 +160,10 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .story blockquote { max-width: 34rem; font: 1.9rem/1.05 var(--font-display); text-transform: uppercase; color: var(--pink); margin-bottom: 2rem; }
 .story cite { display: block; margin-top: .6rem; font: 400 14px var(--font); color: var(--grey); font-style: normal; text-transform: lowercase; }
 .story__dir { color: var(--grey); }
-.story__fig { border-radius: 4px; overflow: hidden; max-width: 340px; justify-self: center; }
-.story__fig img { width: 100%; height: auto; }
+.story__fig { display: grid; gap: 8px; max-width: 380px; width: 100%; justify-self: center; }
+.story__fig img { width: 100%; height: 100%; object-fit: cover; }
+.story__fig img:first-child { aspect-ratio: 4/5; }
+.story__fig-2 { aspect-ratio: 16/10; object-position: 47% 50%; }
 
 /* BOOKING: centred column | tall image */
 .book { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 502px); gap: clamp(1rem, 5vw, 5rem); align-items: stretch; padding: clamp(3rem, 6vw, 5rem) var(--pad); background: var(--white); }
@@ -178,10 +182,9 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .book__right img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
 /* FOOTER */
-.footer { position: relative; overflow: hidden; background: var(--pink); color: var(--white); padding: 2rem var(--pad) 1.5rem; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+.footer { position: relative; overflow: hidden; background: var(--pink); color: var(--white); padding: 2rem var(--pad) 1.5rem; padding-bottom: calc(clamp(110px, 12vw, 170px) + env(safe-area-inset-bottom, 0px)); }
 .footer > * { position: relative; z-index: 1; }
-.footer > .deco { position: absolute; z-index: 0; }
-.deco--foot { top: 0; right: 0; width: clamp(180px, 22vw, 340px); }
+.footer > .corner { position: absolute; z-index: 0; }
 .footer__logo { display: block; width: max-content; margin-bottom: clamp(2rem, 5vw, 4rem); }
 .footer__logo img { height: clamp(96px, 11vw, 140px); width: auto; }
 .footer__info { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; }
@@ -215,11 +218,11 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .hero__thumb { width: 76px; }
   .hero__logo { left: var(--pad); top: 16px; } .hero__logo img { height: 64px; }
   .hero__col { padding-top: 96px !important; }
-  .logo img { height: 28px; } .burger { width: 48px; height: 48px; } .burger span { left: 14px; right: 14px; } .burger span:first-child { top: 19px; } .burger span:last-child { top: 27px; }
+  .logo img { height: 48px; } .burger { width: 48px; height: 48px; } .burger span { left: 14px; right: 14px; } .burger span:first-child { top: 19px; } .burger span:last-child { top: 27px; }
   .nav { height: 64px; }
-  .about { height: 320svh; }
-  .float { width: calc(var(--w) * 1.9); }
-  .deco--menu-a, .deco--menu-b, .deco--foot { width: 150px; }
+  .about { height: 330svh; }
+  .float { width: calc(var(--w) * 2.1); }
+  .corner { width: 38vw; }
   .about__text h2 { font-size: 1.3rem; }
   .menu__tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 var(--pad); margin-bottom: 1.25rem; }
   .menu__tabs button { padding: 12px 20px; border-radius: 999px; background: var(--white); color: var(--ink); font: 400 15px var(--font); transition: background .25s, color .25s; }
@@ -243,7 +246,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .bar__book small { font-size: 14px; opacity: .8; }
   .bar__phone { width: 48px; height: 48px; border-radius: 50%; background: var(--pink); display: grid; place-items: center; flex: none; }
   .bar__phone svg { width: 22px; height: 22px; fill: none; stroke: var(--white); stroke-width: 1.8; stroke-linejoin: round; }
-  .footer { padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px)); }
+  .footer { padding-bottom: calc(9.5rem + env(safe-area-inset-bottom, 0px)); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
