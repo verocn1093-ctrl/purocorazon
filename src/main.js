@@ -70,6 +70,9 @@ $$('.past__track').forEach((track) => {
   state();
 });
 
+// Event cards: tap to flip on touch screens
+$$('.flip').forEach((f) => f.addEventListener('click', () => f.classList.toggle('is-flipped')));
+
 // Reveal on scroll
 if (!reduce && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
