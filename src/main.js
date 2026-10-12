@@ -45,35 +45,36 @@ tabs.forEach((el) => el.addEventListener('click', () => select(+el.dataset.i)));
 $$('[data-cat]').forEach((a) => a.addEventListener('click', () => select(+a.dataset.cat)));
 select(0);
 
-// Past experiences carousel: buttons, end states, mouse drag (touch scrolls natively)
-const track = $('#ctrack');
-const cprev = $('#cprev');
-const cnext = $('#cnext');
-const step = () => { const c = track.firstElementChild; return c ? c.getBoundingClientRect().width + 8 : 300; };
-const carouselState = () => {
-  cprev.disabled = track.scrollLeft < 4;
-  cnext.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-};
-cprev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
-cnext.addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
-track.addEventListener('scroll', carouselState, { passive: true });
-track.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') track.scrollBy({ left: step() });
-  if (e.key === 'ArrowLeft') track.scrollBy({ left: -step() });
+// Carousels (past experiences, testimonials): buttons, end states, mouse drag (touch scrolls natively)
+$$('.past__track').forEach((track) => {
+  const prevBtn = $(`[data-prev="${track.id}"]`);
+  const nextBtn = $(`[data-next="${track.id}"]`);
+  const step = () => { const c = track.firstElementChild; return c ? c.getBoundingClientRect().width + 8 : 300; };
+  const state = () => {
+    prevBtn.disabled = track.scrollLeft < 4;
+    nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  };
+  prevBtn.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
+  nextBtn.addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
+  track.addEventListener('scroll', state, { passive: true });
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') track.scrollBy({ left: step() });
+    if (e.key === 'ArrowLeft') track.scrollBy({ left: -step() });
+  });
+  let down = false, sx = 0, sl = 0;
+  track.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; sx = e.clientX; sl = track.scrollLeft; track.classList.add('drag'); });
+  window.addEventListener('pointermove', (e) => { if (down) track.scrollLeft = sl - (e.clientX - sx); });
+  window.addEventListener('pointerup', () => { if (!down || !track.classList.contains('drag')) return; down = false; track.classList.remove('drag'); });
+  window.addEventListener('resize', state);
+  state();
 });
-let down = false, sx = 0, sl = 0;
-track.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; sx = e.clientX; sl = track.scrollLeft; track.classList.add('drag'); });
-window.addEventListener('pointermove', (e) => { if (down) track.scrollLeft = sl - (e.clientX - sx); });
-window.addEventListener('pointerup', () => { if (!down) return; down = false; track.classList.remove('drag'); });
-window.addEventListener('resize', carouselState);
-carouselState();
 
 // Reveal on scroll
 if (!reduce && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold: 0.15 });
-  $$('.menu__title, .menu__grid, .past__head, .pcard, .story__txt, .story__fig, .book__intro, .book__cols, .book__btn, .book__right, .footer__nav a').forEach((el, i) => {
+  $$('.menu__title, .menu__grid, .past__head, .pcard, .book__intro, .book__cols, .book__btn, .book__right, .footer__nav a').forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 4) * 70}ms`;
     io.observe(el);
@@ -84,7 +85,7 @@ if (!reduce && 'IntersectionObserver' in window) {
 const nav = $('#nav');
 const bar = $('#bar');
 const about = $('.about');
-const floats = $$('.float').map((el) => ({ el, par: +el.dataset.par || 0 }));
+const floats = $$('.float');
 const clamp = (v) => Math.min(1, Math.max(0, v));
 const ease = (t) => 1 - Math.pow(1 - t, 3);
 let ticking = false;
@@ -95,12 +96,12 @@ const update = () => {
   bar.classList.toggle('show', y > vh * 0.8);
   if (!reduce) {
     const top0 = about.getBoundingClientRect().top;
-    floats.forEach(({ el, par }) => {
+    floats.forEach((el) => {
       const top = top0 + el.offsetTop; // position without the transform
-      const t = ease(clamp((vh - top) / (vh * 0.5))); // 0 as it enters at the bottom, 1 once it has risen
-      const shift = (top - vh / 2) * par; // gentle parallax so the six move at slightly different speeds
-      el.style.opacity = clamp(t * 2);
-      el.style.transform = `translateY(${shift}px) scale(${0.8 + 0.2 * t})`;
+      // each image enters at the bottom of the screen a little smaller, then grows to full size as it rises
+      const t = ease(clamp((vh - top) / (vh * 0.45)));
+      el.style.opacity = clamp(t * 3);
+      el.style.transform = `scale(${0.8 + 0.2 * t})`;
     });
   }
   ticking = false;

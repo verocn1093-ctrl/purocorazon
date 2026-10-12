@@ -7,7 +7,7 @@
   <meta name="description" content="Peruvian culinary experiences in London. Beef heart anticuchos, chicken anticuchos, Anticucho Wings and Peruvian sauces. Find us on Instagram or Eventbrite and book in advance." />
   <meta property="og:title" content="Puro Corazón UK · Peruvian Grill in London" />
   <meta property="og:description" content="Peruvian culinary experiences in London. Book in advance via Instagram or Eventbrite." />
-  <meta property="og:image" content="/assets/brand/illus-hero.webp" />
+  <meta property="og:image" content="/assets/brand/photo-skewers.webp" />
   <meta name="theme-color" content="#ec008c" />
   <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
   <script type="module" src="/src/main.js"></script>
@@ -15,25 +15,25 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- NAVIGATION: hidden at the top, slides in after the hero. Hamburger on every screen size. -->
+  <!-- NAVIGATION: transparent bar, hidden at the top, slides in after the hero. Hamburger on every screen size. -->
   <header class="nav" id="nav">
     <a class="logo" href="#top" aria-label="Puro Corazón UK — home"><img src="/assets/brand/logo-color.webp" width="1172" height="590" alt="Puro Corazón" /></a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
   </header>
   <div class="drawer" id="drawer" hidden>
-    <a href="#experience">experience</a>
-    <a href="#menu">food</a>
+    <a href="#experience">about us</a>
+    <a href="#menu">menu</a>
     <a href="#past">past events</a>
-    <a href="#story">story</a>
+    <a href="#testimonials">testimonials</a>
     <a href="#book">book</a>
     <a href="#contact">contact</a>
   </div>
 
   <main id="main">
-    <!-- HERO: 40/60 split, full-bleed image with loading curtain -->
+    <!-- HERO: 40/60 split. Right column: logo, headline at 50%, three links at 25/50/75%, note + square photo at the bottom -->
     <section class="hero" id="top">
       <div class="hero__img">
-        <img src="/assets/brand/illus-hero.webp" width="2000" height="667" alt="Illustration of a street party with an anticuchos stand, a picarones stall and friends sharing food" fetchpriority="high" />
+        <img src="/assets/brand/photo-skewers.webp" width="1458" height="1374" alt="Wooden trays of beef heart and chicken anticuchos on banana leaves" fetchpriority="high" />
         <div class="hero__curtain" aria-hidden="true"></div>
       </div>
       <div class="hero__col">
@@ -49,27 +49,26 @@
           <li><b>02</b><a href="#menu" data-cat="2">sauces</a></li>
           <li><b>03</b><a href="#book">book in advance</a></li>
         </ul>
-        <div class="hero__foot">
-          <p class="hero__note">Peruvian Grill, London<br />Book in advance via<br />Instagram or Eventbrite</p>
-          <div class="hero__thumb"><img src="/assets/brand/photo-vauxhall-square.webp" width="980" height="980" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" /></div>
-        </div>
+        <p class="hero__note">Peruvian Grill, London<br />Book in advance via<br />Instagram or Eventbrite</p>
+        <div class="hero__thumb"><img src="/assets/brand/photo-huancaina.webp" width="1462" height="1368" alt="Papa a la huancaína: yellow potatoes topped with creamy huancaína sauce, egg and parsley" loading="lazy" /></div>
       </div>
     </section>
 
-    <!-- EXPERIENCE: pinned text, scroll-triggered floating images -->
+    <!-- ABOUT US: text pinned at the centre while six images rise from below.
+         Sizes/positions are those of the reference (240×300, 240×240, 120×120). -->
     <section class="about" id="experience" aria-labelledby="about-label">
       <div class="about__pin">
         <div class="about__text">
           <p class="label" id="about-label">about us</p>
-          <h2>Puro Corazón UK shares Peruvian food and culinary experiences in London. Beef heart anticuchos, grilled potatoes, wings and sauces, made with heart and meant to be shared.</h2>
+          <h2>Since 6 July 2021, Puro Corazón UK has shared Peruvian food and culinary experiences in London: traditional beef heart anticuchos, chicken anticuchos, Anticucho Wings, grilled potatoes with anticucho flavour and three sauces. Absolutely juicy, fresh ingredients, a lot of love and unique flavour. Led by director Joan Vallejos Bueno.</h2>
         </div>
       </div>
-      <div class="float" data-par="0.10" style="--x:66.6%;--y:29%;--w:16.7%;--r:4/5"><img src="/assets/brand/photo-skewers.webp" width="1458" height="1374" alt="Wooden trays of beef heart and chicken anticuchos on banana leaves" loading="lazy" /></div>
-      <div class="float" data-par="-0.06" style="--x:0%;--y:36%;--w:16.7%;--r:4/5"><img src="/assets/brand/art-cajon.webp" width="1000" height="1182" alt="Poster artwork: man playing a cajón in front of colonial Lima buildings" loading="lazy" /></div>
-      <div class="float" data-par="0.14" style="--x:33%;--y:43.5%;--w:14.9%;--r:1/1"><img src="/assets/brand/photo-vauxhall-square.webp" width="980" height="980" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden" loading="lazy" /></div>
-      <div class="float" data-par="-0.10" style="--x:78%;--y:50.5%;--w:16.7%;--r:4/5"><img src="/assets/brand/art-bbq-grill.webp" width="1096" height="1234" alt="Poster artwork: skewers over a yellow grill with Inca Kola and Pilsen bottles" loading="lazy" /></div>
-      <div class="float" data-par="0.08" style="--x:15%;--y:59%;--w:20%;--r:4/5"><img src="/assets/brand/illus-couple.webp" style="object-position:47% 50%" width="2000" height="667" alt="Illustration of two friends eating anticuchos and picarones at a street party" loading="lazy" /></div>
-      <div class="float" data-par="-0.12" style="--x:52%;--y:67%;--w:17%;--r:4/5"><img src="/assets/brand/illus-hero.webp" style="object-position:36% 50%" width="2000" height="667" alt="Illustration of a cook grilling anticuchos at a yellow stall" loading="lazy" /></div>
+      <div class="float" style="--x:16.67%;--y:62.2%;--w:16.67%;--r:4/5;--mx:.1%;--my:66.8%;--mw:31.8%"><img src="/assets/brand/photo-ceviche.webp" width="1452" height="1358" alt="Ceviche served in clear bowls with sweet potato, red onion and plantain chips" loading="lazy" /></div>
+      <div class="float" style="--x:66.6%;--y:30.8%;--w:16.67%;--r:4/5;--mx:63.6%;--my:34.4%;--mw:31.5%"><img src="/assets/brand/photo-skewers.webp" width="1458" height="1374" alt="Wooden trays of beef heart and chicken anticuchos on banana leaves" loading="lazy" /></div>
+      <div class="float" style="--x:0%;--y:37.9%;--w:16.67%;--r:4/5;--mx:0%;--my:42.3%;--mw:23.8%"><img src="/assets/brand/photo-pisco.webp" width="1242" height="1144" alt="Pisco sour with a lime wheel and a foam rim" loading="lazy" /></div>
+      <div class="float" style="--x:33.3%;--y:28.4%;--w:8.33%;--r:1/1;--mx:25.5%;--my:29.8%;--mw:24.1%"><img src="/assets/brand/photo-vauxhall-square.webp" width="980" height="980" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden" loading="lazy" /></div>
+      <div class="float" style="--x:50%;--y:46.5%;--w:16.67%;--r:1/1;--mx:39.2%;--my:49.7%;--mw:38%"><img src="/assets/brand/photo-huancaina.webp" width="1462" height="1368" alt="Papa a la huancaína: yellow potatoes topped with creamy huancaína sauce" loading="lazy" /></div>
+      <div class="float" style="--x:83.3%;--y:56.5%;--w:8.33%;--r:1/1;--mx:71.8%;--my:58.5%;--mw:12.3%"><img src="/assets/brand/art-cajon.webp" width="1000" height="1182" alt="Poster artwork: man playing a cajón in front of colonial Lima buildings" loading="lazy" /></div>
     </section>
 
     <!-- MENU: [↑↓ buttons] [card] [category list] -->
@@ -119,8 +118,8 @@
 
           <ul class="cats" aria-label="Menu categories">
             <li class="cat is-active" data-i="0"><span class="cat__img"><img src="/assets/brand/photo-skewers.webp" alt="" loading="lazy" /></span><span class="cat__label">Anticuchos</span></li>
-            <li class="cat" data-i="1"><span class="cat__img"><img src="/assets/brand/illus-couple.webp" style="object-position:47% 50%" alt="" loading="lazy" /></span><span class="cat__label">Wings &amp; potatoes</span></li>
-            <li class="cat" data-i="2"><span class="cat__img cat__img--sauce" aria-hidden="true"><i></i><i></i><i></i></span><span class="cat__label">Sauces</span></li>
+            <li class="cat" data-i="1"><span class="cat__img"><img src="/assets/brand/photo-vauxhall-square.webp" alt="" loading="lazy" /></span><span class="cat__label">Wings &amp; potatoes</span></li>
+            <li class="cat" data-i="2"><span class="cat__img"><img src="/assets/brand/photo-huancaina.webp" alt="" loading="lazy" /></span><span class="cat__label">Sauces</span></li>
           </ul>
         </div>
 
@@ -128,13 +127,13 @@
       </div>
     </section>
 
-    <!-- PAST EXPERIENCES: carousel with prev/next -->
+    <!-- PAST EXPERIENCES carousel -->
     <section class="past" id="past" aria-labelledby="past-title">
       <div class="past__head">
         <h2 id="past-title">Past experiences</h2>
         <div class="past__btns">
-          <button class="round round--soft" id="cprev" aria-label="Previous experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
-          <button class="round round--soft" id="cnext" aria-label="Next experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <button class="round round--soft" data-prev="ctrack" aria-label="Previous experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+          <button class="round round--soft" data-next="ctrack" aria-label="Next experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
         </div>
       </div>
       <div class="past__track" id="ctrack" tabindex="0" role="region" aria-label="Past experiences, scroll horizontally">
@@ -153,43 +152,52 @@
       </div>
     </section>
 
-    <!-- STORY -->
-    <section class="story" id="story" aria-labelledby="story-title">
-      <div class="story__txt">
-        <p class="label">our story</p>
-        <h2 id="story-title">Since <time datetime="2021-07-06">6 July 2021</time>.</h2>
-        <p class="story__lead">Puro Corazón UK promotes Peruvian culinary experiences in London, with traditional beef heart anticuchos, chicken anticuchos, Anticucho Wings, grilled potatoes with anticucho flavour and three sauces.</p>
-        <blockquote>“Absolutely juicy, fresh ingredients, a lot of love and unique flavour.”<cite>Puro Corazón banner</cite></blockquote>
-        <p class="story__dir">Led by director Joan Vallejos Bueno.</p>
+    <!-- TESTIMONIALS: same card carousel as the reference. The three cards are SAMPLES: replace with real customer reviews. -->
+    <section class="past reviews" id="testimonials" aria-labelledby="reviews-title">
+      <div class="past__head">
+        <h2 id="reviews-title">What our clients say</h2>
+        <div class="past__btns">
+          <button class="round round--soft" data-prev="ttrack" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+          <button class="round round--soft" data-next="ttrack" aria-label="Next testimonial"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
       </div>
-      <div class="story__fig">
-        <img src="/assets/brand/photo-skewers.webp" width="1458" height="1374" alt="Wooden trays of beef heart and chicken anticuchos on banana leaves" loading="lazy" />
-        <img class="story__fig-2" src="/assets/brand/illus-couple.webp" width="2000" height="667" alt="Illustration of two friends eating anticuchos and picarones at a street party" loading="lazy" />
+      <div class="past__track" id="ttrack" tabindex="0" role="region" aria-label="Testimonials, scroll horizontally">
+        <article class="tcard">
+          <div><span class="tcard__q" aria-hidden="true">“</span><p class="tcard__text">Add the exact words of a real customer here. Reviews from Google, Instagram or Eventbrite can be copied in as written.</p></div>
+          <div class="tcard__person"><span class="tcard__av" aria-hidden="true"><svg viewBox="0 0 100 90"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg></span><div><b>Customer name</b><small>sample card, replace with a real review</small></div></div>
+        </article>
+        <article class="tcard">
+          <div><span class="tcard__q" aria-hidden="true">“</span><p class="tcard__text">Add the exact words of a real customer here. Reviews from Google, Instagram or Eventbrite can be copied in as written.</p></div>
+          <div class="tcard__person"><span class="tcard__av" aria-hidden="true"><svg viewBox="0 0 100 90"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg></span><div><b>Customer name</b><small>sample card, replace with a real review</small></div></div>
+        </article>
+        <article class="tcard">
+          <div><span class="tcard__q" aria-hidden="true">“</span><p class="tcard__text">Add the exact words of a real customer here. Reviews from Google, Instagram or Eventbrite can be copied in as written.</p></div>
+          <div class="tcard__person"><span class="tcard__av" aria-hidden="true"><svg viewBox="0 0 100 90"><path d="M50 86C14 58 4 38 4 24 4 11 14 3 26 3c9 0 19 5 24 14C55 8 65 3 74 3c12 0 22 8 22 21 0 14-10 34-46 62z"/></svg></span><div><b>Customer name</b><small>sample card, replace with a real review</small></div></div>
+        </article>
       </div>
     </section>
 
-    <!-- BOOKING: centred text column + round button | tall image -->
+    <!-- BOOKING: centred column (logo, large text, two small columns, round button) | tall image -->
     <section class="book" id="book" aria-labelledby="book-title">
       <div class="book__left">
         <div class="book__intro">
-          <img class="book__logo" src="/assets/brand/logo-color.webp" width="798" height="401" alt="Puro Corazón — Peruvian Grill" loading="lazy" />
-          <h2 id="book-title">Events &amp; reservations</h2>
-          <p>Experiences are booked in advance. We do not list dates here: new announcements appear first on Instagram and Eventbrite. Follow us, find the current experience and reserve your place.</p>
+          <img class="book__logo" src="/assets/brand/logo-color.webp" width="1172" height="590" alt="Puro Corazón — Peruvian Grill" loading="lazy" />
+          <h2 id="book-title" class="sr-only">Events and reservations</h2>
+          <p>Reserve your place in advance and let us bring the flavours of Peru to your table. Upcoming experiences are announced on Instagram and Eventbrite, so follow us and check there for what is coming up.</p>
         </div>
         <div class="book__cols">
           <div>
-            <h3>Where to look</h3>
             <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram @purocorazonuk</a></p>
             <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
             <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
           </div>
           <div>
-            <h3>Contact</h3>
             <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
             <p><a href="tel:+447478096764">+44 7478 096764</a></p>
+            <p><a href="https://wa.me/447948706833" target="_blank" rel="noopener">WhatsApp +44 794 870 6833</a></p>
           </div>
         </div>
-        <div class="book__btn"><a class="circle" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener"><span>Open our Eventbrite listing</span></a></div>
+        <div class="book__btn"><a class="circle" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a></div>
       </div>
       <div class="book__right">
         <img src="/assets/brand/photo-vauxhall-garden.webp" width="980" height="1326" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden with people eating" loading="lazy" />
@@ -203,20 +211,21 @@
     <a class="footer__logo" href="#top" aria-label="Puro Corazón UK — back to top"><img src="/assets/brand/logo-white.webp" width="800" height="410" alt="Puro Corazón — Peruvian Grill" /></a>
     <div class="footer__info">
       <nav class="footer__nav" aria-label="Footer">
-        <a href="#experience">experience</a>
-        <a href="#menu">food</a>
-        <a href="#story">story</a>
+        <a href="#experience">about us</a>
+        <a href="#menu">menu</a>
+        <a href="#testimonials">testimonials</a>
         <a href="#book">book</a>
         <a href="#contact">contact</a>
       </nav>
       <div class="footer__cols">
         <div>
-          <h3>Contact</h3>
+          <h3>contact</h3>
           <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
           <p><a href="tel:+447478096764">+44 7478 096764</a></p>
+          <p><a href="https://wa.me/447948706833" target="_blank" rel="noopener">WhatsApp +44 794 870 6833</a></p>
         </div>
         <div>
-          <h3>Find us</h3>
+          <h3>find us</h3>
           <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram</a></p>
           <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
           <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
@@ -232,6 +241,11 @@
       <div class="footer__strip"><img src="/assets/brand/photo-vauxhall-garden.webp" width="980" height="1326" alt="Photo of a colourful, plant-covered bar area at Vauxhall Food and Beer Garden" loading="lazy" /></div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="wa" href="https://wa.me/447948706833" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp: +44 794 870 6833">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
 
   <!-- Sticky bottom bar CTA (small screens) -->
   <div class="bar" id="bar">
