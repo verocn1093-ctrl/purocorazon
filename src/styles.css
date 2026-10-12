@@ -140,8 +140,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 
 /* PAST EXPERIENCES carousel */
 .past { background: var(--white); padding: clamp(4rem, 8vw, 7rem) 0; overflow: hidden; }
-.past__head { display: flex; justify-content: space-between; align-items: center; padding: 0 var(--pad); margin-bottom: 2.5rem; }
-.past h2 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: .9; }
+.past__head { display: flex; justify-content: space-between; align-items: center; padding: 0 var(--pad); margin-bottom: 1.5rem; }
+.past h2.sect { font: 400 14px/1.2 var(--font); text-transform: lowercase; letter-spacing: 0; color: var(--grey); }
 .past__btns { display: flex; gap: 10px; }
 .past__track { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 var(--pad); scroll-padding: 0 var(--pad); scrollbar-width: none; cursor: grab; }
 .past__track::-webkit-scrollbar { display: none; }
