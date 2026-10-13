@@ -184,7 +184,12 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .tcard__person small { font-size: 13px; color: var(--grey); }
 
 /* Floating WhatsApp button */
-.wa { position: fixed; z-index: 60; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); width: 60px; height: 60px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.22); animation: bob 3.2s ease-in-out infinite; transition: transform .25s var(--ease); }
+.wa-wrap { position: fixed; z-index: 60; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 10px; }
+.wa { position: relative; width: 60px; height: 60px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.22); animation: bob 3.2s ease-in-out infinite; transition: transform .25s var(--ease); }
+/* Desktop: hovering the WhatsApp icon slides out a compact 'Book an experience' pill on its left */
+.wa__tip { background: var(--ink); color: var(--white); border-radius: 999px; padding: 0 20px; height: 48px; display: flex; align-items: center; white-space: nowrap; font: 1.35rem/1 var(--font-display); text-transform: uppercase; letter-spacing: .02em; box-shadow: 0 8px 24px rgba(0,0,0,.22); opacity: 0; visibility: hidden; transform: translateX(14px); transition: opacity .3s var(--ease), transform .35s var(--ease), visibility 0s .35s, background .25s; }
+.wa__tip:hover { background: var(--pink); }
+.wa-wrap:hover .wa__tip, .wa-wrap:focus-within .wa__tip { opacity: 1; visibility: visible; transform: none; transition: opacity .3s var(--ease), transform .35s var(--ease), visibility 0s, background .25s; }
 .wa:hover { transform: scale(1.1); animation-play-state: paused; }
 .wa svg { width: 32px; height: 32px; fill: var(--white); }
 @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
@@ -219,7 +224,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .card { min-height: 0; padding: 24px; }
   .menu__captions { margin-top: 2rem; }
   .tcard { width: min(82vw, 340px); min-height: 0; }
-  .wa { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); right: 14px; width: 54px; height: 54px; } .wa svg { width: 28px; height: 28px; }
+  .wa-wrap { display: none; }
   .footer__info, .footer__legal { grid-template-columns: 1fr; }
   .footer__strip { aspect-ratio: 390 / 150; }
   .bar { position: fixed; z-index: 40; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--ink); color: var(--white); border-radius: 14px; padding: 12px 12px 12px 18px; transform: translateY(160%); transition: transform .5s var(--ease); }
@@ -227,9 +232,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .bar__book { display: flex; flex-direction: column; line-height: 1.15; }
   .bar__book span { font: 1.7rem/1 var(--font-display); text-transform: uppercase; }
   .bar__book small { font-size: 14px; opacity: .8; }
-  .bar__phone { transition: background .25s; } .bar__phone:hover { background: var(--white); }
-  .bar__phone { width: 48px; height: 48px; border-radius: 50%; background: var(--pink); display: grid; place-items: center; flex: none; }
-  .bar__phone svg { width: 22px; height: 22px; fill: none; stroke: var(--white); stroke-width: 1.8; stroke-linejoin: round; }
+  .bar__phone { width: 48px; height: 48px; border-radius: 50%; background: #25d366; display: grid; place-items: center; flex: none; }
+  .bar__phone svg { width: 26px; height: 26px; fill: var(--white); }
   .footer { padding-bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
 }
 /* About us on phones: no scattered images. Each pair of photos sticks and the next pair slides over it. */
