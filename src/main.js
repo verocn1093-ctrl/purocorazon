@@ -46,30 +46,6 @@ tabs.forEach((el) => el.addEventListener('click', () => select(+el.dataset.i)));
 $$('[data-cat]').forEach((a) => a.addEventListener('click', () => select(+a.dataset.cat)));
 select(0);
 
-// Carousels (past experiences, testimonials): buttons, end states, mouse drag (touch scrolls natively)
-$$('.past__track').forEach((track) => {
-  const prevBtn = $(`[data-prev="${track.id}"]`);
-  const nextBtn = $(`[data-next="${track.id}"]`);
-  const step = () => { const c = track.firstElementChild; return c ? c.getBoundingClientRect().width + 8 : 300; };
-  const state = () => {
-    prevBtn.disabled = track.scrollLeft < 4;
-    nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-  };
-  prevBtn.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
-  nextBtn.addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
-  track.addEventListener('scroll', state, { passive: true });
-  track.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') track.scrollBy({ left: step() });
-    if (e.key === 'ArrowLeft') track.scrollBy({ left: -step() });
-  });
-  let down = false, sx = 0, sl = 0;
-  track.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; sx = e.clientX; sl = track.scrollLeft; track.classList.add('drag'); });
-  window.addEventListener('pointermove', (e) => { if (down) track.scrollLeft = sl - (e.clientX - sx); });
-  window.addEventListener('pointerup', () => { if (!down || !track.classList.contains('drag')) return; down = false; track.classList.remove('drag'); });
-  window.addEventListener('resize', state);
-  state();
-});
-
 // Events: hover or click a thumbnail to change the text and the large photo
 const evThumbs = $$('.events__thumbs button');
 const evCopy = $$('.ev');
@@ -102,6 +78,11 @@ const nav = $('#nav');
 const bar = $('#bar');
 const about = $('.about');
 const floats = $$('.float');
+const phone = window.matchMedia('(max-width: 600px)');
+if ('IntersectionObserver' in window) {
+  const fio = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); fio.unobserve(en.target); } }), { threshold: 0.2 });
+  floats.forEach((el) => fio.observe(el));
+} else { floats.forEach((el) => el.classList.add('in')); }
 const clamp = (v) => Math.min(1, Math.max(0, v));
 const ease = (t) => 1 - Math.pow(1 - t, 3);
 let ticking = false;
@@ -110,7 +91,9 @@ const update = () => {
   const vh = window.innerHeight;
   nav.classList.toggle('show', y > vh * 0.6);
   bar.classList.toggle('show', y > vh * 0.8);
-  if (!reduce) {
+  if (phone.matches) {
+    floats.forEach((el) => { el.style.opacity = ''; el.style.transform = ''; });
+  } else if (!reduce) {
     const top0 = about.getBoundingClientRect().top;
     floats.forEach((el) => {
       const top = top0 + el.offsetTop; // position without the transform
