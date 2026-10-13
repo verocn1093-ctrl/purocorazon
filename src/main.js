@@ -46,6 +46,22 @@ tabs.forEach((el) => el.addEventListener('click', () => select(+el.dataset.i)));
 $$('[data-cat]').forEach((a) => a.addEventListener('click', () => select(+a.dataset.cat)));
 select(0);
 
+// Hero photos: change every 2 seconds, loop, dots to pick one by hand
+const slides = $$('.hero__slide');
+const heroDots = $$('.hero__dots button');
+let slideNow = 0;
+let slideTimer = null;
+const showSlide = (i) => {
+  slideNow = (i + slides.length) % slides.length;
+  slides.forEach((el, k) => el.classList.toggle('is-active', k === slideNow));
+  heroDots.forEach((el, k) => { el.classList.toggle('is-active', k === slideNow); el.setAttribute('aria-current', String(k === slideNow)); });
+};
+const startSlides = () => { stopSlides(); if (!reduce && slides.length > 1) slideTimer = setInterval(() => showSlide(slideNow + 1), 2000); };
+const stopSlides = () => { if (slideTimer) { clearInterval(slideTimer); slideTimer = null; } };
+heroDots.forEach((el, i) => el.addEventListener('click', () => { showSlide(i); startSlides(); }));
+document.addEventListener('visibilitychange', () => { if (document.hidden) stopSlides(); else startSlides(); });
+startSlides();
+
 // Events: hover or click a thumbnail to change the text and the large photo
 const evThumbs = $$('.events__thumbs button');
 const evCopy = $$('.ev');
