@@ -90,7 +90,7 @@ if (!reduce && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold: 0.15 });
-  $$('.menu__title, .menu__grid, .past__head, .book__intro, .book__cols, .book__btn, .book__right, .footer__nav a').forEach((el, i) => {
+  $$('.menu__title, .menu__grid, .past__head, .footer__nav a').forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 4) * 70}ms`;
     io.observe(el);

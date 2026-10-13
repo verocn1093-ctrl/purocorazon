@@ -26,7 +26,6 @@
     <a href="#menu">menu</a>
     <a href="#testimonials">testimonials</a>
     <a href="#book">book</a>
-    <a href="#past">events</a>
     <a href="#contact">contact</a>
   </div>
 
@@ -51,7 +50,7 @@
           <li><b class="num">03</b><a href="#book">book in advance</a></li>
         </ul>
         <p class="hero__note">Peruvian Grill, London<br />Book in advance via<br />Instagram or Eventbrite</p>
-        <a class="hero__thumb circle circle--hero" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a>
+        <a class="hero__thumb circle circle--hero" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener"><span>Open our<br />Eventbrite<br />listing</span></a>
       </div>
     </section>
 
@@ -153,34 +152,6 @@
       </div>
     </section>
 
-    <!-- BOOKING: centred column (logo, large text, two small columns, round button) | tall image -->
-    <section class="book" id="book" aria-labelledby="book-title">
-      <div class="book__left">
-        <div class="book__intro">
-          <img class="book__logo" src="/assets/brand/logo-color.webp" width="1172" height="590" alt="Puro Corazón — Peruvian Grill" loading="lazy" />
-          <h2 id="book-title" class="sr-only">Events and reservations</h2>
-          <p>Reserve your place in advance and let us bring the flavours of Peru to your table. Upcoming experiences are announced on Instagram and Eventbrite, so follow us and check there for what is coming up.</p>
-        </div>
-        <div class="book__cols">
-          <div>
-            <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram @purocorazonuk</a></p>
-            <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
-            <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
-          </div>
-          <div>
-            <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
-            <p><a href="tel:+447478096764">+44 7478 096764</a></p>
-            <p><a href="https://wa.me/447948706833" target="_blank" rel="noopener">WhatsApp +44 794 870 6833</a></p>
-          </div>
-        </div>
-        <div class="book__btn"><a class="circle" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a></div>
-      </div>
-      <div class="book__right">
-        <img src="/assets/brand/people-anticucho.webp" width="1450" height="1354" alt="A smiling guest dipping a beef heart anticucho into huancaína sauce, with bowls of sauces on a wooden tray" loading="lazy" />
-      </div>
-    </section>
-
-
     <!-- SPACE: wide photo with a light black veil and text on top (pattern from the dripcoffee reference) -->
     <section class="space" aria-labelledby="space-title">
       <div class="space__frame">
@@ -189,16 +160,16 @@
       </div>
     </section>
 
-    <!-- EVENTS: text on the left, stacked thumbnails + large photo on the right; hover or click changes the event -->
+    <!-- EVENTS + BOOKING: text on the left, stacked thumbnails + large photo on the right; hover or click changes the event -->
     <section class="events" id="past" aria-labelledby="events-title">
+      <span id="book" class="anchor" aria-hidden="true"></span>
       <div class="events__text">
         <h2 id="events-title" class="events__title">Upcoming &amp; past events</h2>
         <div class="events__copy" aria-live="polite">
-          <div class="ev is-active" data-i="0">
-            <p class="ev__tag">Upcoming</p>
-            <h3>Next experience</h3>
-            <p>New experiences are announced first on Instagram and Eventbrite. Follow us there to see the next date and book your place in advance.</p>
-            <p class="ev__links"><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram</a></p>
+          <div class="ev ev--next is-active" data-i="0">
+            <p class="ev__tag">Next event</p>
+            <h3>Día de la Canción Criolla</h3>
+            <p>Our next experience: a day of Peruvian criolla music at Vauxhall Food and Beer Garden. Book your place in advance on Eventbrite.</p>
           </div>
           <div class="ev" data-i="1">
             <p class="ev__tag">Already taken place</p>
@@ -207,28 +178,38 @@
           </div>
           <div class="ev" data-i="2">
             <p class="ev__tag">Already taken place</p>
-            <h3>Día de la Canción Criolla</h3>
-            <p>A day of Peruvian criolla music at Vauxhall Food and Beer Garden.</p>
-          </div>
-          <div class="ev" data-i="3">
-            <p class="ev__tag">Already taken place</p>
             <h3>Peruvian Social BBQ</h3>
             <p>A Peruvian social barbecue at Elephant and Castle Station.</p>
           </div>
         </div>
+
+        <div class="events__book">
+          <p class="events__lead">Reserve your place in advance and let us bring the flavours of Peru to your table. Upcoming experiences are announced on Instagram and Eventbrite, so follow us and check there for what is coming up.</p>
+          <div class="events__cols">
+            <div>
+              <p><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram @purocorazonuk</a></p>
+              <p><a href="https://www.facebook.com/profile.php?id=100070919042278" target="_blank" rel="noopener">Facebook</a></p>
+              <p><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a></p>
+            </div>
+            <div>
+              <p><a href="mailto:info@purocorazonuk.com">info@purocorazonuk.com</a></p>
+              <p><a href="tel:+447478096764">+44 7478 096764</a></p>
+              <p><a href="https://wa.me/447948706833" target="_blank" rel="noopener">WhatsApp +44 794 870 6833</a></p>
+            </div>
+          </div>
+          <a class="circle" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a>
+        </div>
       </div>
       <div class="events__gallery">
         <div class="events__thumbs" role="tablist" aria-label="Events">
-          <button role="tab" class="is-active" aria-selected="true" data-i="0" aria-label="Upcoming: next experience"><img src="/assets/brand/people-anticucho.webp" alt="" loading="lazy" /></button>
+          <button role="tab" class="is-active" aria-selected="true" data-i="0" aria-label="Next event: Día de la Canción Criolla"><img src="/assets/brand/people-criolla-music.webp" alt="" loading="lazy" /></button>
           <button role="tab" aria-selected="false" data-i="1" aria-label="Sabor Perú"><img src="/assets/brand/people-corn.webp" alt="" loading="lazy" /></button>
-          <button role="tab" aria-selected="false" data-i="2" aria-label="Día de la Canción Criolla"><img src="/assets/brand/people-criolla-music.webp" alt="" loading="lazy" /></button>
-          <button role="tab" aria-selected="false" data-i="3" aria-label="Peruvian Social BBQ"><img src="/assets/brand/people-skewers.webp" alt="" loading="lazy" /></button>
+          <button role="tab" aria-selected="false" data-i="2" aria-label="Peruvian Social BBQ"><img src="/assets/brand/people-skewers.webp" alt="" loading="lazy" /></button>
         </div>
         <div class="events__main">
-          <img class="is-active" data-i="0" src="/assets/brand/people-anticucho.webp" width="1450" height="1354" alt="A smiling guest dipping a beef heart anticucho into huancaína sauce, with bowls of sauces on a wooden tray" loading="lazy" />
+          <img class="is-active" data-i="0" src="/assets/brand/people-criolla-music.webp" width="1920" height="1080" alt="A man playing the cajón with two guitarists and a laughing crowd on a colourful staircase" loading="lazy" />
           <img data-i="1" src="/assets/brand/people-corn.webp" width="1448" height="1334" alt="Guests tasting grilled corn served on a wooden board" loading="lazy" />
-          <img data-i="2" src="/assets/brand/people-criolla-music.webp" width="1920" height="1080" alt="A man playing the cajón with two guitarists and a laughing crowd on a colourful staircase" loading="lazy" />
-          <img data-i="3" src="/assets/brand/people-skewers.webp" width="1454" height="1376" alt="A guest picking a corn and cheese skewer dipped in huancaína" loading="lazy" />
+          <img data-i="2" src="/assets/brand/people-skewers.webp" width="1454" height="1376" alt="A guest picking a corn and cheese skewer dipped in huancaína" loading="lazy" />
         </div>
       </div>
     </section>
