@@ -26,7 +26,7 @@
     <a href="#menu">menu</a>
     <a href="#testimonials">testimonials</a>
     <a href="#book">book</a>
-    <a href="#past">past events</a>
+    <a href="#past">events</a>
     <a href="#contact">contact</a>
   </div>
 
@@ -51,7 +51,7 @@
           <li><b class="num">03</b><a href="#book">book in advance</a></li>
         </ul>
         <p class="hero__note">Peruvian Grill, London<br />Book in advance via<br />Instagram or Eventbrite</p>
-        <div class="hero__thumb"><img src="/assets/brand/food-spoon.webp" width="1450" height="1440" alt="A hand pouring rocoto sauce from a wooden spoon over grilled chicken anticuchos and potatoes on a banana leaf" loading="lazy" /></div>
+        <a class="hero__thumb circle circle--hero" href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Open our Eventbrite listing</a>
       </div>
     </section>
 
@@ -181,37 +181,55 @@
     </section>
 
 
-    <!-- PAST EXPERIENCES carousel -->
-    <section class="past" id="past" aria-labelledby="past-title">
-      <div class="past__head">
-        <h2 id="past-title" class="sect">past experiences</h2>
-        <div class="past__btns">
-          <button class="round round--soft" data-prev="ctrack" aria-label="Previous experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
-          <button class="round round--soft" data-next="ctrack" aria-label="Next experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    <!-- SPACE: wide photo with a light black veil and text on top (pattern from the dripcoffee reference) -->
+    <section class="space" aria-labelledby="space-title">
+      <div class="space__frame">
+        <img src="/assets/brand/people-crowd.webp" width="1414" height="1112" alt="A crowded Peruvian street-food night at Vauxhall under hanging flowers, with guests at long tables and Peru shirts" loading="lazy" />
+        <h2 id="space-title">un espacio hecho<br />de puro corazón</h2>
+      </div>
+    </section>
+
+    <!-- EVENTS: text on the left, stacked thumbnails + large photo on the right; hover or click changes the event -->
+    <section class="events" id="past" aria-labelledby="events-title">
+      <div class="events__text">
+        <h2 id="events-title" class="events__title">Upcoming &amp; past events</h2>
+        <div class="events__copy" aria-live="polite">
+          <div class="ev is-active" data-i="0">
+            <p class="ev__tag">Upcoming</p>
+            <h3>Next experience</h3>
+            <p>New experiences are announced first on Instagram and Eventbrite. Follow us there to see the next date and book your place in advance.</p>
+            <p class="ev__links"><a href="https://www.eventbrite.com/e/318374094487" target="_blank" rel="noopener">Eventbrite</a><a href="https://www.instagram.com/purocorazonuk/" target="_blank" rel="noopener">Instagram</a></p>
+          </div>
+          <div class="ev" data-i="1">
+            <p class="ev__tag">Already taken place</p>
+            <h3>Sabor Perú</h3>
+            <p>A Peruvian food and music day at The Garden Vauxhall, with live shows, pisco sour and Inca Kola, a heated and covered garden, a rooftop arcade and a kids zone with a bouncy castle.</p>
+          </div>
+          <div class="ev" data-i="2">
+            <p class="ev__tag">Already taken place</p>
+            <h3>Día de la Canción Criolla</h3>
+            <p>A day of Peruvian criolla music at Vauxhall Food and Beer Garden.</p>
+          </div>
+          <div class="ev" data-i="3">
+            <p class="ev__tag">Already taken place</p>
+            <h3>Peruvian Social BBQ</h3>
+            <p>A Peruvian social barbecue at Elephant and Castle Station.</p>
+          </div>
         </div>
       </div>
-      <div class="past__track" id="ctrack" tabindex="0" role="region" aria-label="Past experiences, scroll horizontally">
-        <article class="pcard">
-          <div class="flip" tabindex="0" aria-label="Poster for Sabor Perú, a Peruvian food and music day at The Garden Vauxhall. Hover or tap to see the poster">
-            <img class="flip__front" src="/assets/brand/people-corn.webp" width="1448" height="1334" alt="Guests tasting grilled corn served on a wooden board" loading="lazy" />
-            <img class="flip__back" src="/assets/brand/poster-sabor-peru.webp" width="984" height="1328" alt="Poster for Sabor Perú, a Peruvian food and music day at The Garden Vauxhall" loading="lazy" />
-          </div>
-          <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Sabor Perú</h3><p>The Garden Vauxhall</p></div>
-        </article>
-        <article class="pcard">
-          <div class="flip" tabindex="0" aria-label="Poster for Día de la Canción Criolla at Vauxhall Food and Beer Garden. Hover or tap to see the poster">
-            <img class="flip__front" src="/assets/brand/people-pisco.webp" width="1460" height="1380" alt="Bartender behind a bottle of pisco and a pisco sour" loading="lazy" />
-            <img class="flip__back" src="/assets/brand/poster-criolla-title.webp" width="1000" height="1326" alt="Poster for Día de la Canción Criolla at Vauxhall Food and Beer Garden" loading="lazy" />
-          </div>
-          <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Día de la Canción Criolla</h3><p>Vauxhall Food and Beer Garden</p></div>
-        </article>
-        <article class="pcard">
-          <div class="flip" tabindex="0" aria-label="Poster for Peruvian Social BBQ at Elephant and Castle Station. Hover or tap to see the poster">
-            <img class="flip__front" src="/assets/brand/people-skewers.webp" width="1454" height="1376" alt="A guest picking a corn and cheese skewer dipped in huancaína" loading="lazy" />
-            <img class="flip__back" src="/assets/brand/poster-bbq-title.webp" width="1096" height="1464" alt="Poster for Peruvian Social BBQ at Elephant and Castle Station" loading="lazy" />
-          </div>
-          <div class="pcard__txt"><p class="pcard__tag">Already taken place</p><h3>Peruvian Social BBQ</h3><p>Elephant and Castle Station</p></div>
-        </article>
+      <div class="events__gallery">
+        <div class="events__thumbs" role="tablist" aria-label="Events">
+          <button role="tab" class="is-active" aria-selected="true" data-i="0" aria-label="Upcoming: next experience"><img src="/assets/brand/people-anticucho.webp" alt="" loading="lazy" /></button>
+          <button role="tab" aria-selected="false" data-i="1" aria-label="Sabor Perú"><img src="/assets/brand/people-corn.webp" alt="" loading="lazy" /></button>
+          <button role="tab" aria-selected="false" data-i="2" aria-label="Día de la Canción Criolla"><img src="/assets/brand/people-criolla-music.webp" alt="" loading="lazy" /></button>
+          <button role="tab" aria-selected="false" data-i="3" aria-label="Peruvian Social BBQ"><img src="/assets/brand/people-skewers.webp" alt="" loading="lazy" /></button>
+        </div>
+        <div class="events__main">
+          <img class="is-active" data-i="0" src="/assets/brand/people-anticucho.webp" width="1450" height="1354" alt="A smiling guest dipping a beef heart anticucho into huancaína sauce, with bowls of sauces on a wooden tray" loading="lazy" />
+          <img data-i="1" src="/assets/brand/people-corn.webp" width="1448" height="1334" alt="Guests tasting grilled corn served on a wooden board" loading="lazy" />
+          <img data-i="2" src="/assets/brand/people-criolla-music.webp" width="1920" height="1080" alt="A man playing the cajón with two guitarists and a laughing crowd on a colourful staircase" loading="lazy" />
+          <img data-i="3" src="/assets/brand/people-skewers.webp" width="1454" height="1376" alt="A guest picking a corn and cheese skewer dipped in huancaína" loading="lazy" />
+        </div>
       </div>
     </section>
   </main>

@@ -70,15 +70,27 @@ $$('.past__track').forEach((track) => {
   state();
 });
 
-// Event cards: tap to flip on touch screens
-$$('.flip').forEach((f) => f.addEventListener('click', () => f.classList.toggle('is-flipped')));
+// Events: hover or click a thumbnail to change the text and the large photo
+const evThumbs = $$('.events__thumbs button');
+const evCopy = $$('.ev');
+const evImgs = $$('.events__main img');
+const pickEvent = (i) => {
+  evThumbs.forEach((b, k) => { b.classList.toggle('is-active', k === i); b.setAttribute('aria-selected', String(k === i)); });
+  evCopy.forEach((el, k) => el.classList.toggle('is-active', k === i));
+  evImgs.forEach((el, k) => el.classList.toggle('is-active', k === i));
+};
+evThumbs.forEach((b, i) => {
+  b.addEventListener('click', () => pickEvent(i));
+  b.addEventListener('mouseenter', () => { if (window.matchMedia('(hover: hover)').matches) pickEvent(i); });
+  b.addEventListener('focus', () => pickEvent(i));
+});
 
 // Reveal on scroll
 if (!reduce && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold: 0.15 });
-  $$('.menu__title, .menu__grid, .past__head, .pcard, .book__intro, .book__cols, .book__btn, .book__right, .footer__nav a').forEach((el, i) => {
+  $$('.menu__title, .menu__grid, .past__head, .book__intro, .book__cols, .book__btn, .book__right, .footer__nav a').forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 4) * 70}ms`;
     io.observe(el);
