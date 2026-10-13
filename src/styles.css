@@ -171,7 +171,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .footer__strip img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 
 /* TESTIMONIALS: cards slide to the left on their own (pause on hover). Cards are samples until real reviews are added. */
-.reviews { background: var(--pink); padding: 0 0 clamp(4rem, 8vw, 7rem); overflow: hidden; }
+.reviews { background: var(--pink); padding: 0 0 clamp(5rem, 10vw, 9rem); overflow: hidden; }
 .reviews .sect { font: 400 14px/1.2 var(--font); text-transform: lowercase; letter-spacing: 0; color: rgba(255,255,255,.85); text-align: center; padding: 0 var(--pad); margin-bottom: 1.5rem; }
 .reviews__window { overflow: hidden; }
 .reviews__track { display: flex; gap: 8px; width: max-content; animation: tslide 70s linear infinite; }
@@ -265,7 +265,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .space h2 { position: relative; z-index: 1; color: var(--white); text-align: center; font-size: clamp(3rem, 7vw, 7.5rem); line-height: .92; text-wrap: balance; padding: 0 1rem; }
 
 /* EVENTS */
-.events { position: relative; display: grid; grid-template-columns: 38.6% minmax(0, 1fr); gap: 0; padding: clamp(3rem, 6vw, 5rem) var(--pad) clamp(4rem, 8vw, 7rem); background: var(--pink); color: var(--white); align-items: stretch; }
+.events { position: relative; display: grid; grid-template-columns: 38.6% minmax(0, 1fr); gap: 0; padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 7vw, 7rem) clamp(5.5rem, 11vw, 10rem); background: var(--pink); color: var(--white); align-items: stretch; }
 .anchor { position: absolute; margin-top: -80px; }
 .events__text { display: flex; flex-direction: column; min-width: 0; padding-right: 1.5rem; }
 .events__title { font: 700 13px/1.2 var(--font); text-transform: uppercase; letter-spacing: .02em; margin-bottom: 1.4rem; }
@@ -308,3 +308,18 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   .events__thumbs button { aspect-ratio: 1; }
   .events__main { width: 100%; flex: none; align-self: auto; }
 }
+
+/* Light variant (published as a second site with VITE_THEME=light): white hero, white events and testimonials */
+.theme-light .hero { background: var(--white); color: var(--ink); }
+.theme-light .hero__img { background: var(--soft); }
+.theme-light .hero__curtain { background: var(--white); }
+.theme-light .hero__note { color: var(--grey); }
+.theme-light .circle.hero__thumb:hover { background: var(--ink); color: var(--white); }
+.theme-light .events, .theme-light .reviews { background: var(--white); color: var(--ink); }
+.theme-light .events__main { background: var(--soft); }
+.theme-light .ev__tag { color: var(--grey); }
+.theme-light .ev--next .ev__tag, .theme-light .ev--next h3 { color: var(--pink); }
+.theme-light .events__cols a:hover { color: var(--pink); }
+.theme-light .events .circle { background: var(--pink); }
+.theme-light .events .circle:hover { background: var(--ink); color: var(--white); }
+.theme-light .reviews .sect { color: var(--grey); }

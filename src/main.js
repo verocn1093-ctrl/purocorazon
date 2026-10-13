@@ -9,6 +9,8 @@ const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
+if (import.meta.env.VITE_THEME) document.documentElement.classList.add(`theme-${import.meta.env.VITE_THEME}`);
+
 $('#year').textContent = new Date().getFullYear();
 
 // Drawer menu (hamburger on every screen size)

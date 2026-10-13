@@ -15,3 +15,7 @@ Instagram/Facebook/Eventbrite could not be read directly (login/bot walls), so n
 - Vector logo, original brand fonts, hi-res food photos (anticuchos, wings, potatoes, sauces).
 - Confirm the Eventbrite link is a live listing (it redirects to `eventbrite.co.uk/e/peruvian-tasting-experience-food-drink-tickets-318374094487`).
 - Permission to publish the WhatsApp booking number seen on a past poster, and whether extra menu items (costillas anticucheras, picarones, tres leches, marcianos, Inca Kola, etc.) should be listed.
+
+## Two published versions
+- Dark/fuchsia (default): hero black, events and testimonials fuchsia.
+- Light: same code built with VITE_THEME=light (adds the theme-light class): hero, events and testimonials white. Set that variable in the second Vercel project.
