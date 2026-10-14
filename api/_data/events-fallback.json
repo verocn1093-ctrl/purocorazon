@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "id": "dia-de-la-cancion-criolla-next",
+      "title": "Día de la Canción Criolla",
+      "date": "",
+      "dateISO": null,
+      "status": "next",
+      "description": "Our next experience: a day of Peruvian criolla music at Vauxhall Food and Beer Garden. Book your place in advance on Eventbrite.",
+      "link": "https://www.eventbrite.com/e/318374094487",
+      "photos": [{ "src": "/assets/brand/people-criolla-music.webp", "thumb": "/assets/brand/people-criolla-music.webp" }]
+    },
+    {
+      "id": "sabor-peru",
+      "title": "Sabor Perú",
+      "date": "",
+      "dateISO": null,
+      "status": "past",
+      "description": "A Peruvian food and music day at The Garden Vauxhall, with live shows, pisco sour and Inca Kola, a heated and covered garden, a rooftop arcade and a kids zone with a bouncy castle.",
+      "link": "",
+      "photos": [{ "src": "/assets/brand/people-corn.webp", "thumb": "/assets/brand/people-corn.webp" }]
+    },
+    {
+      "id": "dia-de-la-cancion-criolla-past",
+      "title": "Día de la Canción Criolla",
+      "date": "",
+      "dateISO": null,
+      "status": "past",
+      "description": "A day of Peruvian criolla music at Vauxhall Food and Beer Garden.",
+      "link": "",
+      "photos": [{ "src": "/assets/brand/people-pisco.webp", "thumb": "/assets/brand/people-pisco.webp" }]
+    },
+    {
+      "id": "peruvian-social-bbq",
+      "title": "Peruvian Social BBQ",
+      "date": "",
+      "dateISO": null,
+      "status": "past",
+      "description": "A Peruvian social barbecue at Elephant and Castle Station.",
+      "link": "",
+      "photos": [{ "src": "/assets/brand/people-skewers.webp", "thumb": "/assets/brand/people-skewers.webp" }]
+    }
+  ]
+}

@@ -327,3 +327,18 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .theme-light .events .circle { background: var(--pink); }
 .theme-light .events .circle:hover { background: var(--ink); color: var(--white); }
 .theme-light .reviews .sect { color: var(--grey); }
+
+/* Events: dynamic content from the sheet */
+.ev__date { font: 600 13px/1.2 var(--font); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .7rem; }
+.ev--next .ev__date { color: var(--yellow); }
+.events__main { cursor: default; }
+.events__main:has(.events__dots:not([hidden])) { cursor: pointer; }
+.events__dots { position: absolute; left: 0; right: 0; bottom: 16px; z-index: 2; display: flex; justify-content: center; gap: 9px; }
+.events__dots[hidden] { display: none; }
+.events__dots button { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.55); box-shadow: 0 0 0 1px rgba(0,0,0,.2); transition: background .25s, transform .25s; }
+.events__dots button.is-active { background: var(--white); transform: scale(1.35); }
+.events .circle.is-hidden, .events__btn .circle.is-hidden { visibility: hidden; pointer-events: none; }
+/* many events: the thumbnail column scrolls instead of stretching the section */
+.events__thumbs { contain: size; align-self: stretch; overflow-y: auto; scrollbar-width: none; }
+.events__thumbs::-webkit-scrollbar { display: none; }
+@media (max-width: 900px) { .events__thumbs { contain: none; align-self: auto; overflow-y: visible; overflow-x: auto; } .events__thumbs button { flex: none; width: 84px; } }

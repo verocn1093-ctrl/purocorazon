@@ -19,3 +19,19 @@ Instagram/Facebook/Eventbrite could not be read directly (login/bot walls), so n
 ## Two published versions
 - Dark/fuchsia (default): hero black, events and testimonials fuchsia.
 - Light: same code built with VITE_THEME=light (adds the theme-light class): hero, events and testimonials white. Set that variable in the second Vercel project.
+
+## Events managed from a Google Sheet (client-editable)
+"Upcoming & past events" is fed by a published Google Sheet; photos come from Google Drive.
+
+**Files**
+- `api/events.js` – `GET /api/events`: reads the CSV, returns JSON (CDN cache 5 min + stale-while-revalidate).
+- `api/img.js` – `GET /api/img?id=<DriveID>&w=400|800|1600`: downloads the Drive photo on the server, resizes (max 1600px) to WebP and serves it from our own domain (long CDN cache). No hotlinking to Drive.
+- `api/_lib/csv.js` (RFC4180 parser, column mapping, date/status/order), `api/_lib/drive.js` (ID extraction + Google host allow-list), `api/_lib/events.js` (load + last-good cache + fallback).
+- `api/_data/events-fallback.json` – bundled events shown if the sheet is unreachable and nothing is cached.
+- `src/events.js` – renders the section (text via `textContent`, lazy thumbnails, alt = event name, placeholder on failed images).
+- `public/assets/brand/placeholder.svg` – brand placeholder. `docs/events-sheet-template.csv` – sheet template. `scripts/local-test.mjs` – local test bench (`node scripts/local-test.mjs`).
+
+**Environment variable** (Vercel → Project → Settings → Environment Variables, then redeploy; set it in BOTH projects)
+- `EVENTS_CSV_URL` = Google Sheets → File → Share → Publish to web → CSV link. If unset, the fallback data is shown.
+
+**Rules**: the nearest upcoming event is the main one; other upcoming ones and past events (newest → oldest) go in the thumbnails; empty or untitled rows are ignored; empty link → no Eventbrite button; image URLs must be Google domains (drive.google.com, lh3.googleusercontent.com), anything else becomes the placeholder. Photos must be shared as "Anyone with the link".

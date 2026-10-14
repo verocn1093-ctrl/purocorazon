@@ -4,6 +4,7 @@ import '@fontsource/barlow/500.css';
 import '@fontsource/barlow/600.css';
 import '@fontsource/barlow/700.css';
 import './styles.css';
+import { initEvents } from './events.js';
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s);
@@ -64,20 +65,8 @@ heroDots.forEach((el, i) => el.addEventListener('click', () => { showSlide(i); s
 document.addEventListener('visibilitychange', () => { if (document.hidden) stopSlides(); else startSlides(); });
 startSlides();
 
-// Events: hover or click a thumbnail to change the text and the large photo
-const evThumbs = $$('.events__thumbs button');
-const evCopy = $$('.ev');
-const evImgs = $$('.events__main img');
-const pickEvent = (i) => {
-  evThumbs.forEach((b, k) => { b.classList.toggle('is-active', k === i); b.setAttribute('aria-selected', String(k === i)); });
-  evCopy.forEach((el, k) => el.classList.toggle('is-active', k === i));
-  evImgs.forEach((el, k) => el.classList.toggle('is-active', k === i));
-};
-evThumbs.forEach((b, i) => {
-  b.addEventListener('click', () => pickEvent(i));
-  b.addEventListener('mouseenter', () => { if (window.matchMedia('(hover: hover)').matches) pickEvent(i); });
-  b.addEventListener('focus', () => pickEvent(i));
-});
+// Events section: built-in markup + live data from the Google Sheet (see src/events.js and api/events.js)
+initEvents();
 
 // Reveal on scroll
 if (!reduce && 'IntersectionObserver' in window) {
